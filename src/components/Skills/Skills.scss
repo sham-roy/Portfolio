@@ -13,7 +13,7 @@
     // Change this from flex to multi-column
     column-count: 3; // Start with 3 columns, adjust based on preference/screen width
     column-gap: 25px; // Gap between columns
-    column-fill: balance; // Tries to make columns of similar height (browser support varies)
+    column-fill: balance; // Tries to make columns of similar height (browser support varies);
   }
 
   .skill-category-flow-item {
