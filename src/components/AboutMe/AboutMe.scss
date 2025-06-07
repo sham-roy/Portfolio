@@ -1,0 +1,36 @@
+// src/components/AboutMe/AboutMe.scss
+@import '../../app/globals.scss';
+
+.about-me-section {
+    .about-intro {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        text-align: left;
+        // max-width: 750px;
+        // margin-left: auto;
+        // margin-right: auto;
+    }
+
+    .about-subsection {
+        margin-bottom: 1.5rem;
+
+        h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            color: $primary-blue-dark;
+            margin-bottom: 0.5rem;
+
+            svg {
+                color: $primary-blue;
+            }
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: $text-color-medium;
+        }
+    }
+}

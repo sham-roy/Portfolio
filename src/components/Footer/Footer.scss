@@ -1,0 +1,148 @@
+// src/components/Footer/Footer.scss
+@import '../../app/globals.scss'; // Ensure this path is correct
+
+.two-col-built-right-footer { // New main class
+    background-color: $primary-blue-dark;
+    color: lighten($text-on-blue-bg, 35%);
+    padding: 15px 0;
+    border-top: 1px solid rgba($primary-blue, 0.6);
+    font-size: 0.75rem;
+    line-height: 1.4;
+
+    .container.footer-content-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; // Vertically center the columns
+        flex-wrap: wrap;
+        gap: 10px 20px;
+    }
+
+    // Left Column Styling
+    .footer-left-info-col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        min-width: 0; // Help flex shrink
+
+        @media (max-width: 768px) {
+            width: 100%;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 10px;
+            order: 1; // Info first on mobile
+        }
+    }
+
+    .footer-copyright-main {
+        margin: 0;
+        font-weight: 500;
+        color: lighten($text-on-blue-bg, 25%);
+        white-space: nowrap;
+    }
+
+    .footer-professional-statement {
+        margin: 0;
+        font-size: 0.85em;
+        font-style: italic;
+        color: lighten($text-on-blue-bg, 30%);
+        opacity: 0.95;
+    }
+
+    .footer-tagline {
+        margin: 0;
+        font-size: 0.8em;
+        color: lighten($text-on-blue-bg, 35%);
+        opacity: 0.85;
+    }
+
+    // Right Column Styling
+    .footer-right-action-col {
+        display: flex;
+        flex-direction: column; // Stack social icons above "built with"
+        align-items: flex-end; // Align content to the right
+        gap: 6px; // Gap between social icons and "built with" line
+        min-width: 0; // Help flex shrink
+
+        @media (max-width: 768px) {
+            width: 100%;
+            align-items: center;
+            text-align: center;
+            order: 2; // Actions second on mobile
+        }
+    }
+
+    .footer-social-icons-group {
+        display: flex;
+        align-items: center;
+        gap: 15px; // Gap between social icons
+
+        // No media query needed here for justify-content as parent handles centering
+        a {
+            color: lighten($text-on-blue-bg, 15%);
+            font-size: 1.25rem;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.15s ease;
+
+            &:hover {
+                color: $text-on-blue-bg;
+                transform: scale(1.12) translateY(-1px);
+            }
+        }
+    }
+
+    .footer-built-with-on-right { // Styling for "Built with" on the right
+        margin: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap; // Allow tech icons to wrap if many
+        justify-content: flex-end; // Keep it right-aligned within its space
+        gap: 3px;
+        font-size: 0.8em; // Match tagline or statement size
+        color: lighten($text-on-blue-bg, 35%);
+
+        @media (max-width: 768px) {
+            justify-content: center; // Center this line on mobile if it wraps
+        }
+
+        .built-with-heart-icon {
+            color: $accent-blue;
+            font-size: 0.9em;
+            margin: 0 1px;
+            vertical-align: middle;
+        }
+
+        .tech-logo-item-footer {
+            display: inline-flex;
+            align-items: center;
+            font-size: 1.1em;
+            color: lighten($text-on-blue-bg, 20%);
+            margin: 0 2px;
+            transition: color 0.2s ease, transform 0.15s ease;
+
+            &:hover {
+                color: $text-on-blue-bg;
+                transform: scale(1.1);
+            }
+            svg { vertical-align: middle; }
+        }
+    }
+
+
+    // --- Back to Top Button ---
+    .back-to-top-built-right { // Updated class name
+        position: fixed;
+        bottom: 12px; right: 12px; width: 32px; height: 32px;
+        font-size: 0.9rem; background-color: $accent-blue;
+        color: $primary-blue-dark; border: none; border-radius: 50%;
+        display: flex; justify-content: center; align-items: center;
+        cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+        transition: background-color 0.2s ease, transform 0.2s ease;
+        z-index: 1000;
+
+        &:hover {
+            background-color: darken($accent-blue, 10%);
+            transform: scale(1.08);
+        }
+    }
+}

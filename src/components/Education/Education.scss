@@ -1,0 +1,79 @@
+// src/components/Education/Education.scss
+@import '../../app/globals.scss'; // Same styling as experience basically
+
+
+.education-section {
+
+    // .section global styles apply
+    h2 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        svg {
+            color: $primary-blue;
+        }
+    }
+
+    .section-summary {
+        // Global .section-summary styles apply
+        margin-bottom: 2rem;
+    }
+
+    .education-items-container {
+        display: grid;
+        // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // If you want cards side-by-side
+        gap: 20px; // Gap between education items if they are in a grid or just stacked
+    }
+
+    .education-item {
+
+        // Uses global .card style
+        // Specific overrides for education items if .card isn't enough
+        h3 {
+            // Degree
+            color: $primary-blue;
+            margin-bottom: 8px;
+        }
+
+        .edu-institution {
+            font-size: 1rem;
+            font-weight: 500;
+            color: $text-color-medium;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            svg {
+                color: $primary-blue-light;
+                font-size: 0.9em;
+            }
+        }
+
+        .edu-board,
+        .edu-dates {
+            font-size: 0.9rem;
+            color: $text-color-light;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            svg {
+                font-size: 0.85em;
+            }
+        }
+
+        .edu-details-list {
+            padding-left: 20px;
+            margin-top: 10px;
+
+            li {
+                font-size: 0.9rem;
+                color: $text-color-medium;
+                margin-bottom: 4px;
+            }
+        }
+    }
+}

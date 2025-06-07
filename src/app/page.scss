@@ -1,0 +1,8 @@
+// src/App.scss
+// Most styles are in index.scss or component-specific files
+
+main {
+  // Ensures AnimatedSections don't cause horizontal scrollbars
+  // before they animate into view if using translateX animations.
+  // This is also handled globally in index.scss body now.
+}

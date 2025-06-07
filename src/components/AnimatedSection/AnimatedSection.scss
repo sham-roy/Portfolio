@@ -1,0 +1,24 @@
+// src/components/AnimatedSection/AnimatedSection.scss
+.animated-section {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+    &.fadeInUp {
+        transform: translateY(50px);
+    }
+
+    &.fadeInLeft {
+        transform: translateX(-50px);
+    }
+
+    &.fadeInRight {
+        transform: translateX(50px);
+    }
+
+    // Add more animation types if needed
+
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
+}

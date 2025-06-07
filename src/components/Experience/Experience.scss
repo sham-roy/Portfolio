@@ -1,0 +1,54 @@
+// src/components/Experience/Experience.scss
+@import '../../app/globals.scss';
+
+.experience-section {
+  .experience-item {
+
+    // .card styling is global
+    h3 {
+      color: $primary-blue;
+    }
+
+    h4 {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: $text-color-medium;
+      margin-bottom: 15px;
+      font-weight: 500;
+
+      svg {
+        margin-right: 5px;
+        color: $primary-blue-light;
+      }
+
+      .dates {
+        margin-left: auto; // Pushes dates to the right if space allows
+        font-style: italic;
+        color: $text-color-light;
+        background-color: $primary-blue-xtra-light;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 0.9em;
+      }
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  }
+}
+
+.remote-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  background-color: lighten($primary-blue-xtra-light, 5%);
+  color: $primary-blue-dark;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin-left: 10px;
+  font-weight: 500;
+}

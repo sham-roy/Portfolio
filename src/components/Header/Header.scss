@@ -1,0 +1,123 @@
+// src/components/Header/Header.scss
+@import '../../app/globals.scss'; // OR '../../index.scss' - YOUR GLOBAL VARIABLES FILE
+
+// Ensure these variables are defined in your global SCSS:
+// $primary-blue, $primary-blue-dark, $text-on-blue-bg, $text-color-dark, $text-color-medium
+// $font-headings
+
+.minimalist-fixed-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background-color: $primary-blue-dark; // Dark blue from your theme
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 12px 0; // Very compact vertical padding
+
+  .header-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; // Vertically aligns the two main sections (brand and actions)
+    flex-wrap: wrap;
+    gap: 10px 15px;
+  }
+
+  // --- Left Section: Brand (Name & Title) - Remains the same ---
+  .header-brand-section {
+    flex-shrink: 0;
+    text-align: left;
+    @media (max-width: 600px) {
+      width: 100%;
+      text-align: center;
+    }
+
+    .brand-name {
+      font-family: $font-headings;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: $text-on-blue-bg;
+      margin: 0 0 2px 0;
+      line-height: 1.1;
+      text-align: left;
+    }
+
+    .brand-title {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: lighten($text-on-blue-bg, 20%);
+      margin: 0;
+      line-height: 1.2;
+    }
+  }
+
+  // --- Right Section: Actions & Contact ---
+  .header-actions-section {
+    display: flex;
+    flex-direction: column; // Stack the top row (icons+CV) above availability
+    align-items: flex-end;   // Align all content to the right
+    gap: 5px;                // Very small gap between the top row and availability text
+
+    @media (max-width: 600px) { // When the main header wraps
+      width: 100%;
+      align-items: center; // Center all action items
+      margin-top: 8px;
+    }
+
+    .header-top-right-row { // New wrapper for icons and CV
+      display: flex;
+      align-items: center;
+      gap: 10px; // Gap between icons group and Download CV button
+      flex-wrap: wrap; // Allow items to wrap within this row
+      justify-content: flex-end; // Align items to the right
+
+      @media (max-width: 600px) { // When the whole right section is centered
+        justify-content: center; // Center items within this row
+        width: 100%; // Take full width for centering
+      }
+    }
+
+    .header-contact-icons {
+      display: flex;
+      align-items: center;
+      gap: 12px; // Gap between icons
+      flex-shrink: 0;
+
+      a {
+        color: lighten($text-on-blue-bg, 15%);
+        font-size: 1.1rem;
+        line-height: 1;
+        transition: color 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+          color: $text-on-blue-bg;
+          transform: scale(1.15);
+        }
+      }
+    }
+
+    .header-download-cv {
+      // .download-cv-button is styled by its own SCSS.
+      // Ensure it's compact and visually appealing on a dark blue background.
+    }
+
+    .header-availability-text-bottom { // Styling for availability text at the bottom
+      font-size: 0.75rem; // Slightly smaller for bottom placement
+      color: lighten($text-on-blue-bg, 25%); // More subdued color
+      margin-top: 5px; // Small margin from the row above
+      display: inline-flex; // To align icon and text
+      align-items: center;
+      gap: 5px;
+      svg {
+        font-size: 0.9em;
+      }
+      // On small screens, it will naturally center with its parent's align-items: center
+    }
+  }
+}
+
+// --- IMPORTANT: Add body padding to prevent content from being hidden under fixed header ---
+body {
+  padding-top: 60px; // Adjust this value based on the final header's height
+}

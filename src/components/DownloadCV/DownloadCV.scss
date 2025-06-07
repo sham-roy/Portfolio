@@ -1,0 +1,40 @@
+// src/components/DownloadCV/DownloadCV.scss
+@import '../../app/globals.scss'; // Or '../../index.scss' - your global variables file
+
+.download-cv-button {
+    display: inline-flex; // Align icon and text nicely
+    align-items: center;
+    justify-content: center;
+    gap: 8px; // Space between icon and text
+
+    background-color: $primary-blue; // Use your theme's primary blue
+    color: $text-on-blue-bg; // Text color for contrast on the blue background
+    border: none;
+    padding: 8px 18px; // Adjust padding for desired button size (compact)
+    border-radius: 20px; // Pill shape or your standard button border-radius
+    font-size: 0.9rem; // Slightly smaller font for a compact header
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none; // If it were an <a> tag, but good practice
+    white-space: nowrap; // Prevent text from wrapping
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); // Subtle shadow
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+
+    .download-icon {
+        font-size: 1em; // Icon size relative to button font size
+        // No need to set color if it inherits from the button's text color correctly
+    }
+
+    &:hover {
+        background-color: lighten($primary-blue, 8%); // Lighter blue on hover
+        // background-color: $primary-blue-dark; // Or darker blue on hover
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+}

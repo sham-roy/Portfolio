@@ -1,0 +1,14 @@
+// src/components/ProfileSummary/ProfileSummary.scss
+@import '../../app/globals.scss';;
+
+.profile-summary-section {
+  p {
+    font-size: 1.1rem;
+    color: $text-color-medium;
+    text-align: justify;
+    margin-bottom: 1rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

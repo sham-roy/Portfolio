@@ -1,0 +1,84 @@
+// src/components/TechStackBanner/TechStackBanner.scss
+@import '../../app/globals.scss'; // Your path
+
+.tech-stack-banner-compact { // Keep this class or rename if you prefer e.g., .tech-stack-banner-ultra-compact
+  padding: 5px 0; // VERY reduced vertical padding
+  background-color: $primary-blue-dark; // Even more subtle background, or none
+  // border-top: 1px solid $border-color-light; // Optional: very thin border
+  // border-bottom: 1px solid $border-color-light; // Optional: very thin border
+  overflow: hidden;
+}
+
+.tech-banner-container {
+  // Uses global .container for max-width, but local padding is minimal
+  padding-left: 10px; // Minimal internal padding for the container if needed
+  padding-right: 10px;
+}
+
+// Optional Title - if used, make it very small
+.tech-banner-title-compact {
+  text-align: center;
+  font-size: 0.9rem; // Very small title
+  color: $text-color-medium;
+  margin-bottom: 10px; // Reduced margin
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tech-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  // Optional: fade edges - more important if background is not transparent
+  // mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  // -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.tech-logo-scroller {
+  display: flex;
+  width: fit-content;
+  // Adjust animation duration based on content. Keep it fairly slow for many icons.
+  animation: marquee-scroll 60s linear infinite; // Can be adjusted
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.tech-logo-item-compact {
+  display: flex;
+  align-items: center; // Vertically center the icon
+  justify-content: center;
+  color: $text-color-medium;
+  padding: 0 10px; // REDUCED horizontal padding between logos
+  height: 35px; // Explicit height for the items to control banner height
+  transition: transform 0.15s ease, color 0.15s ease; // Quicker transition
+  flex-shrink: 0;
+
+  svg {
+    font-size: 1.6rem; // SIGNIFICANTLY REDUCED icon size
+    line-height: 1;
+  }
+
+  // Names are off by default for ultra-compactness
+  // .tech-name-compact {
+  //   font-size: 0.6rem; // Tiny if shown
+  //   color: $text-color-light;
+  //   margin-left: 4px; // If showing name next to icon
+  // }
+
+  &:hover {
+    transform: scale(1.1); // Smaller hover scale
+    color: $background-off-white;
+  }
+}
+
+// Keyframes for the marquee scroll animation (remains the same)
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%); // Assumes duplicated logos
+  }
+}

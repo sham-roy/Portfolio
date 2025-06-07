@@ -1,0 +1,59 @@
+// src/components/EducationAndCert/EducationAndCert.scss
+@import '../../app/globals.scss';
+
+.education-cert-section {
+    .container {
+        // Overriding default container if needed for two columns
+        // display: flex; // Optional: for side-by-side columns on larger screens
+        // flex-wrap: wrap;
+        // gap: 30px;
+    }
+
+    // .education-column, .certification-column {
+    //   flex: 1;
+    //   min-width: 300px; // Ensure columns don't get too squished
+    // }
+
+    h2 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        svg {
+            font-size: 1.2em;
+            color: $primary-blue;
+        }
+    }
+
+    .education-item,
+    .certification-item {
+
+        // .card styling is global
+        h3 {
+            color: $primary-blue;
+        }
+
+        h4 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            svg {
+                color: $primary-blue-light;
+            }
+        }
+
+        .dates {
+            font-style: italic;
+            color: $text-color-light;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            svg {
+                color: $text-color-light;
+            }
+        }
+    }
+}

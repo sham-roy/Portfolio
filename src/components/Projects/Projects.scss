@@ -1,0 +1,116 @@
+// src/components/Projects/Projects.scss
+@import '../../app/globals.scss'; // Ensure this path is correct
+
+.projects-section {
+  // Default styles for .projects-section if it's used WITHOUT the Three.js background
+  // It will inherit .section styles from globals.scss (padding, default background, etc.)
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+  }
+
+  .project-item {
+    // This applies to the .card within .projects-grid
+    // It uses the global .card style defined in index.scss for its base
+    // background, padding, border-radius, box-shadow, etc.
+
+    h3 {
+      color: $primary-blue-dark; // From global .card h3 or specific override
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px; // Add some space above links if h3 is tight
+
+      a {
+        font-size: 0.9rem;
+        color: $primary-blue;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+
+        svg {
+          font-size: 1.1em;
+        }
+
+        &:hover {
+          color: darken($primary-blue, 10%);
+          // text-decoration: none; // If you don't want underline from global 'a:hover'
+        }
+      }
+    }
+
+    .project-link-display {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: $text-color-light;
+      margin-top: -8px; // Pulls it closer to h3 if links are not present or below
+      margin-bottom: 10px;
+      word-break: break-all; // Prevent long URLs from breaking layout
+    }
+
+    .project-role {
+      font-size: 1rem;
+      color: $text-color-medium;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .project-description-text {
+      font-size: 0.95rem;
+      color: $text-color-medium;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .project-libraries {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid $border-color-light;
+
+      strong {
+        display: block;
+        font-size: 0.9rem;
+        color: $primary-blue-dark;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        svg {
+          color: $primary-blue;
+          font-size: 1.1em;
+        }
+      }
+
+      .skills-list-flow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 8px;
+      }
+
+      .project-library-tag {
+        // This will inherit from the global .skill-tag style
+        // You can add specific overrides here if needed for project library tags
+        // For example, if you want them slightly different from general skill tags:
+        // background-color: lighten($primary-blue-xtra-light, 2%);
+        // border-color: $primary-blue-xtra-light;
+
+        svg {
+          // This overrides global .skill-tag svg if more specific
+          font-size: 1em; // Ensure consistency
+          color: $primary-blue; // Keep icon color consistent
+          margin-right: 4px; // As per your original
+        }
+      }
+    }
+  }
+}
+
