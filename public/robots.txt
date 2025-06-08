@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/ # If you have API routes you don't want crawled
 
-Sitemap: https://www.syroyce.in//sitemap.xml
+Sitemap: http://www.yourdomain.com//sitemap.xml
