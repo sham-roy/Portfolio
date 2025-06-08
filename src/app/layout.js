@@ -1,12 +1,9 @@
 // src/app/layout.js
 import "./globals.scss";
-import SEO_CONFIG from '../../seo.config';
-
-// Import next/font
+import SEO_CONFIG from '../../seo.config.js';
 import { Roboto, Montserrat } from 'next/font/google';
 
-// Configure Roboto font
-const roboto = Roboto({
+const roboto = Roboto({ /* ... your config ... */
   weight: ['300', '400', '500', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
@@ -14,9 +11,7 @@ const roboto = Roboto({
   variable: '--font-roboto',
   preload: true,
 });
-
-// Configure Montserrat font
-const montserrat = Montserrat({
+const montserrat = Montserrat({ /* ... your config ... */
   weight: ['300', '400', '500', '600', '700', '800'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
@@ -25,9 +20,8 @@ const montserrat = Montserrat({
   preload: true,
 });
 
-// Use Next.js App Router's built-in metadata object for global defaults
 export const metadata = {
-  metadataBase: new URL(SEO_CONFIG.openGraph.url), // Ensure SEO_CONFIG.openGraph.url is your full base URL
+  metadataBase: new URL(SEO_CONFIG.openGraph.url), // From your seo.config.js
   title: {
     default: SEO_CONFIG.defaultTitle,
     template: SEO_CONFIG.titleTemplate,
@@ -37,16 +31,22 @@ export const metadata = {
     type: SEO_CONFIG.openGraph.type,
     locale: SEO_CONFIG.openGraph.locale,
     url: SEO_CONFIG.openGraph.url,
-    siteName: SEO_CONFIG.openGraph.site_name,
+    siteName: SEO_CONFIG.openGraph.site_name, // Note: Next.js uses siteName
+    // You can add a default OG image here if it's an ABSOLUTE URL
+    // images: [{ url: '/default-og.jpg', width: 1200, height: 630, alt: 'Default Site Image' }],
   },
   twitter: {
     card: SEO_CONFIG.twitter.cardType === 'summary_large_image' ? 'summary_large_image' : 'summary',
+    // site: '@YourTwitterSiteHandle', // Define in seo.config.js or here
+    // creator: '@YourTwitterCreatorHandle', // Define in seo.config.js or here
   },
+  // Add other global metadata like icons, manifest, theme-color etc.
+  // icons: { icon: '/favicon.ico' },
+  // manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({ children }) {
   return (
-    // Apply the font variables to the <html> tag
     <html lang="en" className={`${roboto.variable} ${montserrat.variable}`}>
       <body>
         {children}

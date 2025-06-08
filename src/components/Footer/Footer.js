@@ -1,6 +1,5 @@
 // src/components/Footer/Footer.js
 "use client";
-
 import React, { useState, useEffect } from 'react';
 import { contactInfo, footerInfo } from '../../data/resumeData';
 import './Footer.scss';

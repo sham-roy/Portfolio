@@ -19,7 +19,7 @@ const HeroSection = () => {
 
             <div className="container hero-content">
                 <AnimatedSection animationType="fadeInUp" delay={0.1}>
-                    <h1 className="hero-title">Hi, I'm {contactInfo.name}</h1>
+                    <h1 className="hero-title">Hi, I&apos;m {contactInfo.name}</h1>
                 </AnimatedSection>
                 <AnimatedSection animationType="fadeInUp" delay={0.3}>
                     <p className="hero-subtitle">{contactInfo.title || "Mearn Stack Developer"}</p>
@@ -31,7 +31,7 @@ const HeroSection = () => {
                     </p>
                 </AnimatedSection>
                 <AnimatedSection animationType="fadeInUp" delay={0.7}>
-                    <a href="#contact" className="btn hero-cta-button">Let's Connect</a>
+                    <a href="#contact" className="btn hero-cta-button">Let&apos;s Connect</a>
                     {/* Or link to projects: <a href="#projects" className="btn hero-cta-button">View My Work</a> */}
                 </AnimatedSection>
             </div>
