@@ -1,9 +1,9 @@
 // src/components/TechStackBanner/TechStackBanner.scss
-@import '../../app/globals.scss'; // Your path
+@import '../../app/globals.scss'; 
 
-.tech-stack-banner-compact { // Keep this class or rename if you prefer e.g., .tech-stack-banner-ultra-compact
-  padding: 5px 0; // VERY reduced vertical padding
-  background-color: $primary-blue-dark; // Even more subtle background, or none
+.tech-stack-banner-compact { 
+  padding: 5px 0; 
+  background-color: $primary-blue-dark; 
   // border-top: 1px solid $border-color-light; // Optional: very thin border
   // border-bottom: 1px solid $border-color-light; // Optional: very thin border
   overflow: hidden;
@@ -15,12 +15,11 @@
   padding-right: 10px;
 }
 
-// Optional Title - if used, make it very small
 .tech-banner-title-compact {
   text-align: center;
-  font-size: 0.9rem; // Very small title
+  font-size: 0.9rem; 
   color: $text-color-medium;
-  margin-bottom: 10px; // Reduced margin
+  margin-bottom: 10px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -37,8 +36,7 @@
 .tech-logo-scroller {
   display: flex;
   width: fit-content;
-  // Adjust animation duration based on content. Keep it fairly slow for many icons.
-  animation: marquee-scroll 60s linear infinite; // Can be adjusted
+  animation: marquee-scroll 60s linear infinite;
 
   &:hover {
     animation-play-state: paused;
@@ -47,16 +45,16 @@
 
 .tech-logo-item-compact {
   display: flex;
-  align-items: center; // Vertically center the icon
+  align-items: center;
   justify-content: center;
   color: $text-color-medium;
-  padding: 0 10px; // REDUCED horizontal padding between logos
-  height: 35px; // Explicit height for the items to control banner height
+  padding: 0 10px; 
+  height: 35px; 
   transition: transform 0.15s ease, color 0.15s ease; // Quicker transition
   flex-shrink: 0;
 
   svg {
-    font-size: 1.6rem; // SIGNIFICANTLY REDUCED icon size
+    font-size: 1.6rem;
     line-height: 1;
   }
 
@@ -68,17 +66,16 @@
   // }
 
   &:hover {
-    transform: scale(1.1); // Smaller hover scale
+    transform: scale(1.1); 
     color: $background-off-white;
   }
 }
 
-// Keyframes for the marquee scroll animation (remains the same)
 @keyframes marquee-scroll {
   0% {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-50%); // Assumes duplicated logos
+    transform: translateX(-50%);
   }
 }
