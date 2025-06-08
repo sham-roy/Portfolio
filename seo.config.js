@@ -5,8 +5,8 @@ const SEO_CONFIG = {
     description: "Sham Roy, a skilled MERN, MEAN, React, and Next.js frontend developer based in Kochi, Kerala. Delivering high-quality web solutions.",
     openGraph: {
         type: 'website',
-        locale: 'en_IN', 
-        url: 'http://www.yourdomain.com/', 
+        locale: 'en_IN',
+        url: 'https://www.syroyce.in/',
         site_name: 'Sham Roy | Web Developer Kochi',
         // You can add a default OG image here too
     },
