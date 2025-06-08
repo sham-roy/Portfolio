@@ -131,7 +131,7 @@ const ThreeJsBackground = ({
                         fov: 60,             // Field of view
                     }}
                     dpr={[1, 1.5]} // Device Pixel Ratio
-                // frameloop="demand" // Optional: for performance, renders only when props change
+                // frameloop="demand" // for performance, renders only when props change
                 // onCreated={({ gl, size }) => console.log(`Canvas created: ${size.width}x${size.height}`)}
                 >
                     <ambientLight intensity={0.7} />

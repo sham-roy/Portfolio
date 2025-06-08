@@ -1,42 +1,119 @@
 // src/components/Languages/Languages.scss
-@import '../../app/globals.scss';;
+@import '../../app/globals.scss';
 
-.languages-section {
-    h2 {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+.languages-section-enhanced {
+    // background-color: lighten($primary-blue-xtra-light, 5%); // Optional: slightly different bg
+    // padding-bottom: 60px; // Ensure enough padding
 
-        svg {
-            font-size: 1.2em;
-            color: $primary-blue;
-        }
-    }
+    .section-header-languages {
+        text-align: center;
+        margin-bottom: 30px; // Space before the language cards
 
-    .languages-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-
-    .language-item {
-        // .card styling is global
-        // Specific styling for language items if needed beyond .card
-        display: flex;
-        flex-direction: column; // Stack name and proficiency
-        align-items: flex-start;
-
-        .lang-name {
-            font-size: 1.2rem;
-            font-weight: 600;
+        h2 {
+            display: inline-flex; // To keep icon and text together if centered
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem; // Slightly smaller than main section H2s if desired
             color: $primary-blue-dark;
-            margin-bottom: 5px;
+            border-bottom: 2px solid $primary-blue-light;
+            padding-bottom: 8px;
+            margin-bottom: 10px; // If subheading is present
+
+            svg {
+                font-size: 1.3em;
+                color: $primary-blue;
+            }
         }
 
-        .lang-proficiency {
-            font-size: 0.95rem;
-            color: $text-color-medium;
-            font-style: italic;
+        // .languages-subheading {
+        //   font-size: 0.95rem;
+        //   color: $text-color-medium;
+        // }
+    }
+
+    .languages-grid-enhanced {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); // Adjust minmax as needed
+        gap: 25px;
+    }
+
+    .language-card-item {
+        background-color: $background-white;
+        padding: 20px 25px;
+        border-radius: $border-radius-medium; // e.g., 8px
+        box-shadow: $box-shadow-soft; // e.g., 0 3px 10px rgba(0,0,0,0.07)
+        border: 1px solid $border-color-light;
+        display: flex;
+        flex-direction: column;
+        gap: 12px; // Gap between header and proficiency indicator
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(darken($primary-blue, 10%), 0.12);
         }
+    }
+
+    .language-card-header {
+        display: flex;
+        justify-content: space-between; // Name on left, proficiency text on right
+        align-items: baseline; // Align baselines of name and proficiency text
+        width: 100%;
+        margin-bottom: 5px; // Small space before proficiency indicator
+    }
+
+    .lang-name-enhanced {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: $primary-blue-dark;
+    }
+
+    .lang-proficiency-text {
+        // "Fluent", "Intermediate", etc.
+        font-size: 0.8rem;
+        font-style: italic;
+        color: $text-color-medium;
+        background-color: $primary-blue-xtra-light;
+        padding: 3px 8px;
+        border-radius: $border-radius-pill;
+        font-weight: 500;
+        color: $primary-blue-dark;
+    }
+
+    // Proficiency Dots Styling
+    .proficiency-dots-wrapper {
+        display: flex;
+        gap: 5px; // Gap between dots
+        height: 12px; // Set a height for alignment
+        align-items: center;
+    }
+
+    .proficiency-dot {
+        font-size: 0.7rem; // Size of the dot icon
+        transition: color 0.3s ease;
+
+        &.filled {
+            color: $primary-blue; // Color for filled dots
+        }
+
+        &.empty {
+            color: $border-color; // Color for empty dots
+        }
+    }
+
+    // Optional: Progress Bar Styling (if you use the bar instead of dots)
+    .language-card-bar-container {
+      width: 100%;
+      height: 8px;
+      background-color: $border-color-light;
+      border-radius: $border-radius-pill;
+      overflow: hidden; // Keep fill within bounds
+      margin-top: 5px;
+    }
+    .language-card-bar-fill {
+      height: 100%;
+      background-color: $primary-blue;
+      border-radius: $border-radius-pill;
+      transition: width 0.5s ease-in-out;
     }
 }

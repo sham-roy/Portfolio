@@ -42,6 +42,8 @@ $box-shadow-strong: 0 8px 25px rgba(0, 0, 0, 0.15);
 // --- Fonts ---
 $font-primary: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 $font-headings: 'Montserrat', sans-serif;
+$font-primary-family: var(--font-roboto), -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$font-headings-family: var(--font-montserrat), "Helvetica Neue", Arial, sans-serif; // Adjusted fallback for headings
 
 // --- NEW: Subtle Gradient Variables ---
 $gradient-section-light-blue: linear-gradient(135deg, $background-white 0%, lighten($primary-blue-xtra-light, 5%) 100%);
@@ -52,6 +54,7 @@ $gradient-section-darker-subtle: linear-gradient(to bottom, $background-white 0%
 // You can create more specific gradients as needed
 $gradient-profile-summary: linear-gradient(to right bottom, lighten($primary-blue-xtra-light, 3%), $background-white);
 $gradient-skills-section: linear-gradient(160deg, $background-white, rgba($primary-blue, 0.05));
+
 
 // --- Global Resets & Defaults ---
 * {
@@ -65,7 +68,7 @@ html {
 }
 
 body {
-    font-family: $font-primary;
+    font-family: $font-primary-family;
     background: $primary-blue-dark;
     color: $text-color-dark;
     line-height: 1.7;
@@ -88,8 +91,7 @@ h3,
 h4,
 h5,
 h6 {
-    /* ... your existing h styles ... */
-    font-family: $font-headings;
+    font-family: $font-headings-family;
     color: $primary-blue-dark;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -130,7 +132,6 @@ p {
 }
 
 a {
-    /* ... your existing a styles ... */
     color: $accent-blue;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -142,7 +143,6 @@ a {
 }
 
 ul {
-    /* ... your existing ul styles ... */
     list-style-position: outside;
     padding-left: 20px;
 
@@ -157,21 +157,16 @@ ul {
 }
 
 .section {
-    padding: 50px 0; // RESTORED: Internal vertical padding for content within the section
-    // Adjust this value (e.g., 40px, 60px) as needed for visual comfort.
+    padding: 50px 0;
     background-color: $background-white;
     // border-radius: $border-radius-large;
-    box-shadow: $box-shadow-strong;
-
-    // Default top margin for sections (will apply from the 3rd section onwards)
-    margin-top: 5px; // This is the standard space BETWEEN sections
+    box-shadow: $box-shadow-soft;
+    margin-top: 0px;
 
     &:first-child {
-        // Targets the very first .section child of its parent
         margin-top: 0;
     }
 
-    // Ensure last section before footer has no bottom margin
     &:last-child {
         margin-bottom: 0;
     }
@@ -180,7 +175,6 @@ ul {
 
 // --- Card Styling (for experience, projects, etc.) ---
 .card {
-    /* ... your existing .card styles ... */
     background: $background-light-blush;
     padding: 25px;
     margin-bottom: 25px;
@@ -201,7 +195,6 @@ ul {
 
 // Skill tag styling
 .skill-tag {
-    /* ... your existing .skill-tag styles ... */
     display: inline-flex;
     align-items: center;
     gap: 5px;

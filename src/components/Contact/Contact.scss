@@ -2,171 +2,206 @@
 @import '../../app/globals.scss'; // Ensure this path is correct
 
 .contact-section-two-col-refined {
-  // We can keep this main class name or rename it, e.g., .contact-section-form-focused
-  background-color: $background-off-white; // Or your standard section background
-  padding: 50px 0 60px;
+  // Keeping class name for consistency with your JSX
+  background-color: $background-off-white;
+  padding: 50px 0 70px; // Increased bottom padding slightly
+  overflow: hidden; // Good for containing any subtle overflow from animations
 
   .section-header-contact {
     text-align: center;
-    margin-bottom: 30px; // Reduced margin as the form panel will have its own top margin/padding
+    margin-bottom: 35px; // Slightly more space
 
     h2 {
-      font-size: 2rem;
+      font-size: 2.1rem; // Slightly larger if desired
       color: $primary-blue-dark;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .contact-intro-text {
-      font-size: 1rem;
+      font-size: 1.05rem; // Slightly larger
       color: $text-color-medium;
-      line-height: 1.6;
-      // max-width: 600px;
-      // margin: 0 auto;
-      text-align: left;
+      line-height: 1.65;
+      max-width: 620px;
+      margin: 0 auto;
+      // text-align: left; // Reverted to center to match h2 if section-header is centered
     }
   }
 
   .contact-content-grid {
-    // This div now only contains the contact-form-panel-main.
-    // We'll use it to center the form panel.
-    display: flex; // Use flex to easily center its single child
-    justify-content: center; // Center the form panel horizontally
-    align-items: flex-start; // Align to top if there were multiple items
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .contact-form-panel-main {
     background-color: $background-white;
-    padding: 30px 35px; // Generous padding inside the panel
-    border-radius: $border-radius-medium; // e.g., 8px or 12px for a softer look
-    box-shadow: $box-shadow-soft; // e.g., 0 5px 20px rgba(0,0,0,0.08);
-    width: 100%; // Panel takes full width of its parent grid cell
-    max-width: 700px; // But constrain its max width for readability
-    // height: 100%; // Not needed if it's the only item and grid aligns to start
+    padding: 30px 40px; // Adjusted padding slightly
+    border-radius: $border-radius-large; // Softer, more modern radius (e.g., 12px)
+    box-shadow: $box-shadow-medium; // Slightly more defined shadow (e.g., 0 6px 20px rgba(0,0,0,0.08))
+    width: 100%;
+    max-width: 700px;
+    border: 1px solid $border-color-light;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; // For panel hover
+
+    // Optional: Subtle hover effect on the entire form panel
+    &:hover {
+      box-shadow: 0 8px 25px rgba(darken($primary-blue, 10%), 0.12);
+      transform: translateY(-3px);
+    }
   }
 
   .panel-title {
-    // "Send a Message"
-    font-size: 1.4rem;
+    font-size: 1.5rem; // Slightly larger title
     color: $primary-blue;
     margin-top: 0;
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid $primary-blue-xtra-light;
+    margin-bottom: 30px; // More space below title
+    padding-bottom: 12px;
+    border-bottom: 2px solid $primary-blue-xtra-light; // Slightly thicker/more visible border
     font-weight: 600;
-    text-align: left; // Or center if you prefer title centered above form
+    text-align: left;
   }
 
-  // --- Contact Form Styling (largely the same as before) ---
   .main-contact-form {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 20px; // Keep good gap
   }
 
   .form-row-contact {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); // Adjust min for form inputs
-    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
   }
 
+  
   .form-group-contact {
     display: flex;
     flex-direction: column;
+    position: relative;
 
     label {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 6px;
-      font-size: 0.85rem;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
       color: $text-color-dark;
       font-weight: 500;
+      transition: color 0.2s ease;
 
       svg {
-        color: $primary-blue;
+        color: $primary-blue-light;
         font-size: 1em;
+        transition: color 0.2s ease;
       }
     }
 
     input[type="text"],
     input[type="email"],
     textarea {
-      padding: 10px 12px;
-      border: 1px solid $border-color;
-      border-radius: $border-radius-small; // Use your global var
-      font-size: 0.9rem;
+      padding: 12px 15px;
+      border: 1px solid $border-color; // Default border
+      border-radius: $border-radius-small;
+      font-size: 0.95rem;
       font-family: $font-primary;
-      background-color: $background-white;
+      background-color: lighten($primary-blue-xtra-light, 6%); // Default light blue input background
+      color: $text-color-dark;
+      transition: // Combined transitions for smoothness
+        border-color 0.25s ease-in-out,
+        box-shadow 0.25s ease-in-out,
+        background-color 0.25s ease-in-out,
+        transform 0.15s ease-out; // Added transform for hover lift
 
       &::placeholder {
         color: $text-color-light;
-        opacity: 0.9;
+        opacity: 1;
       }
 
+      // --- HOVER STATE ---
+      &:hover {
+        border-color: darken($primary-blue-light, 10%); // Border becomes a slightly darker shade of light blue
+        background-color: lighten($primary-blue-xtra-light, 3%); // Background becomes slightly less light blue
+        // transform: translateY(-1px); // Optional: very subtle lift
+        // box-shadow: 0 2px 4px rgba(0,0,0,0.03); // Optional: very subtle shadow
+      }
+
+      // --- FOCUS STATE ---
       &:focus {
         outline: none;
-        border-color: $primary-blue;
-        box-shadow: 0 0 0 2.5px rgba($primary-blue, 0.18);
+        border-color: $primary-blue; // Border becomes primary blue
+        background-color: $background-white; // Background becomes white for typing clarity
+        box-shadow: 0 0 0 3px rgba($primary-blue, 0.25); // Focus ring
+        transform: translateY(0); // Reset any hover transform
+      }
+    }
+
+    // When any input/textarea within the form group is focused, style the label
+    &:focus-within {
+      label {
+        color: $primary-blue;
+
+        svg {
+          color: $primary-blue;
+        }
       }
     }
 
     textarea {
       resize: vertical;
-      min-height: 100px;
+      min-height: 110px;
     }
   }
 
-  // In your Contact.scss or global styles if this button style is reused
 
+  // Submit Button - using your existing interactive styles
   .btn-submit-contact {
     background-color: $primary-blue;
     color: $text-on-blue-bg;
     border: none;
-    padding: 12px 25px; // Slightly more padding for a better feel
-    font-size: 1rem; // Slightly larger font for better presence
+    padding: 12px 25px;
+    font-size: 1rem;
     font-weight: 600;
-    border-radius: $border-radius-medium; // Softer, more modern radius (e.g., 8px)
+    border-radius: $border-radius-medium;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; // Increased gap between icon and text
-    align-self: center; // Center the button within the form
-    min-width: 200px; // Good minimum width
-    position: relative; // Needed for pseudo-elements if used for advanced hover
-    overflow: hidden; // For effects like ripples or shine that stay within bounds
-    box-shadow: 0 3px 6px rgba($primary-blue-dark, 0.18); // Slightly stronger base shadow
-    // More complex transition for multiple properties and icon
+    gap: 10px;
+    align-self: center;
+    min-width: 200px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba($primary-blue-dark, 0.18);
     transition:
       background-color 0.25s ease-out,
       transform 0.15s ease-out,
       box-shadow 0.25s ease-out,
-      color 0.25s ease-out; // Added color transition
+      color 0.25s ease-out;
 
     svg {
       font-size: 1.1em;
-      transition: transform 0.25s ease-out; // Add transition to the icon
+      transition: transform 0.25s ease-out;
+      // Removed continuous bobbing by default, can be re-added if desired
+      // animation: subtle-plane-bob 2s ease-in-out infinite alternate;
     }
 
     &:hover {
-      background-color: darken($primary-blue, 8%); // Darken a bit more on hover
-      box-shadow: 0 5px 12px rgba($primary-blue-dark, 0.25); // More pronounced shadow
-      transform: translateY(-2px); // Slightly more lift
+      background-color: darken($primary-blue, 8%);
+      box-shadow: 0 5px 12px rgba($primary-blue-dark, 0.25);
+      transform: translateY(-2px);
 
       svg {
-        transform: translateX(3px) scale(1.1); // Icon moves slightly right and scales up
-        // Or a slight rotation:
-        // transform: rotate(10deg) scale(1.1);
+        transform: translateX(4px) scale(1.12) rotate(5deg); // More dynamic icon movement
       }
     }
 
     &:active {
-      transform: translateY(0px) scale(0.97); // Press down effect
+      transform: translateY(0px) scale(0.97);
       box-shadow: 0 2px 5px rgba($primary-blue-dark, 0.2);
-      background-color: darken($primary-blue, 12%); // Even darker when active
+      background-color: darken($primary-blue, 12%);
     }
 
-    // --- Optional: Advanced Hover Effect - Shine/Gloss ---
+    // Ripple effect (ensure @keyframes ripple is defined)
     &::after {
       content: "";
       position: absolute;
@@ -185,33 +220,33 @@
       animation: ripple 0.8s ease-out forwards;
     }
   }
+}
 
-  // Optional: Keyframes for ripple/shine effect
-  @keyframes ripple {
-    0% {
-      transform: scale(0, 0) translate(-50%, -50%);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(30, 30) translate(-50%, -50%); // Adjust scale for button size
-      opacity: 0;
-    }
+// Keyframes for ripple (ensure this is present, can be in globals.scss or here)
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0) translate(-50%, -50%);
+    opacity: 1;
   }
 
-  // --- Optional: Subtle continuous animation for the icon ---
-  .btn-submit-contact svg {
-    animation: subtle-plane-bob 2s ease-in-out infinite alternate;
+  100% {
+    // Adjust scale based on button size, e.g., 40 or 50 for larger buttons
+    transform: scale(35, 35) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+// Optional: Keyframes for subtle plane bobbing (if you re-enable it)
+@keyframes subtle-plane-bob {
+  0% {
+    transform: translateY(0px);
   }
 
-  @keyframes subtle-plane-bob {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-2px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
+  50% {
+    transform: translateY(-2px);
+  }
+
+  100% {
+    transform: translateY(0px);
   }
 }
