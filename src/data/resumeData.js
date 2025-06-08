@@ -1,22 +1,14 @@
 // src/data/resumeData.js
-import {
-  FaLinkedin, FaEnvelope, FaPhone, FaWhatsapp, FaGithub, FaInstagram, FaTwitter, FaMapMarkerAlt
-} from 'react-icons/fa';
-import {
-  DiReact, DiAngularSimple, DiNodejsSmall, DiMongodb, DiFirebase, DiGit, DiJsBadge, DiCss3, DiHtml5, DiSass, DiNpm // Added Npm
-} from 'react-icons/di';
+// import { FaLinkedin, FaEnvelope, FaPhone, FaWhatsapp, FaGithub, FaInstagram, FaTwitter, FaMapMarkerAlt } from 'react-icons/fa';
+import { DiReact, DiAngularSimple, DiNodejsSmall, DiMongodb, DiFirebase, DiGit, DiJsBadge, DiCss3, DiHtml5, DiSass, DiNpm } from 'react-icons/di';
+// import { FaAward, FaUniversity,FaLaptopCode, FaLink, FaGithubSquare,SiPrettier, } from 'react-icons/fa';
+import { FaGlobeAmericas, FaBriefcase, } from 'react-icons/fa';
 import {
   SiNextdotjs, SiRedux, SiExpress, SiTailwindcss, SiBootstrap, SiTypescript, SiSocketdotio, SiNestjs,
-  SiWebpack, SiBabel, SiJest, SiTestinglibrary, SiGraphql, SiApollographql, SiStorybook, SiEslint, SiPrettier, SiVite, SiPwa, // Added more
-  SiReact,
-  SiAngular,
-  SiChartdotjs,
-  SiRazorpay
+  SiWebpack, SiBabel, SiJest, SiTestinglibrary, SiGraphql, SiApollographql, SiStorybook, SiEslint, SiVite, SiPwa,
+  SiReact, SiAngular, SiChartdotjs, SiRazorpay
 } from 'react-icons/si';
-import { FaAward, FaUniversity } from 'react-icons/fa'; // FaUniversity could represent an official body
-import { /* Your existing Fa... and Si... Di... icon imports */
-  FaGlobeAmericas, FaBriefcase, FaLaptopCode, FaLink, FaGithubSquare // Added specific icons
-} from 'react-icons/fa';
+
 
 const getLibraryIcon = (libraryName) => {
   const lowerName = libraryName.toLowerCase();
@@ -54,14 +46,10 @@ export const contactInfo = {
 
 export const profileSummary = [
   "Software Engineer with 2+ years of experience specializing in frontend development using React.js, Next.js, and Angular. Since 2023, I’ve built scalable, high-performance web applications at Dotcod Innovations, focusing on clean architecture, component reusability, and responsive UI design.",
-
   "Proficient in integrating REST APIs and implementing secure authentication using Firebase (OTP, Google, LinkedIn), OAuth, and JWT. Experienced in managing complex forms with Formik, Yup, and Hero UI components, applying reusable helper patterns to ensure consistent validation and user feedback.",
-
   "Also comfortable with backend technologies like Node.js, Express.js, MongoDB, and WebSockets, enabling full-stack contributions when needed. I work efficiently in Agile teams, collaborating remotely across sprints and retrospectives while delivering reliable, production-ready code.",
-
   "Rooted in traditional software values—clarity, structure, and long-term maintainability—I’m passionate about continuous learning, clean design systems, and meaningful collaboration. Open to freelance and team-based projects that value thoughtful engineering and impact-driven results."
 ];
-
 
 
 // NEW: About Me Section Data
@@ -321,12 +309,14 @@ export const education = [
   // Note: "MERN Stack" from Luminar (Dec 2022 - May 2023 from PDF B) is now represented by the MEARN Internship under Experience and the MEARN Full Stack under Certification.
 ];
 
+
 export const languages = [
-  { lang: "English", proficiency: "Fluent (Read, Write, Listen, Speak)" },
-  { lang: "Hindi", proficiency: "Intermediate (Read, Listen, Speak)" },
-  { lang: "Malayalam", proficiency: "Native" },
-  { lang: "Tamil", proficiency: "Conversational (Listen, Speak)" }
+  { lang: "English", proficiency: "Fluent", level: 5 }, // Max level 5
+  { lang: "Hindi", proficiency: "Intermediate", level: 3 },
+  { lang: "Malayalam", proficiency: "Native", level: 5 }, // Native can also be max
+  { lang: "Tamil", proficiency: "Conversational", level: 2 }
 ];
+
 
 
 export const footerInfo = {

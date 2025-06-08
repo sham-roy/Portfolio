@@ -4,7 +4,7 @@
 .hero-section {
     // Or your specific section class
     width: 100%;
-    min-height: 90vh; // Or a fixed height like `height: 700px;`
+    min-height: 100vh; // Or a fixed height like `height: 700px;`
     position: relative; // ***** CRITICAL for the absolute positioned background *****
     overflow: hidden; // Good practice
     display: flex; // For centering hero-content

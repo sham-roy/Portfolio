@@ -33,7 +33,7 @@ const Contact = () => {
                             className="main-contact-form" // Consistent form class
                             onSubmit={(e) => {
                                 e.preventDefault();
-                                alert("Contact form submitted (placeholder)!");
+                                alert("Thank you for your interest. This section is currently under development. We appreciate your patience.");
                                 e.target.reset();
                             }}
                         >

@@ -8,20 +8,14 @@ import { contactInfo } from '../../data/resumeData'; // Assuming name and title 
 const HeroSection = () => {
     return (
         <section className="hero-section" id="hero"> {/* id for potential nav linking */}
-            {/* <ThreeJsBackground
-                count={200} // Maybe fewer or more particles for hero
-                shapeColor="#FFFFFF" // White particles usually look good on dark/gradient hero BGs
-            // style={{ zIndex: 0 }} // Ensure it's behind hero content
-            /> */}
 
             <ThreeJsBackground
-                particleCount={300}
+                particleCount={200}
                 particleColor="#FFFFFF"
-                particleBaseSize={0.1}           // Finer particles
-                spreadFactor={12}
-                mouseParallaxStrength={1.0}      // Stronger reaction to mouse
+                particleBaseSize={0.1}
+                spreadFactor={15}
+                mouseParallaxStrength={1.0}
             />
-
 
             <div className="container hero-content">
                 <AnimatedSection animationType="fadeInUp" delay={0.1}>
