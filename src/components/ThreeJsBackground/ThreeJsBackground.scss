@@ -1,0 +1,26 @@
+// src/components/HeroSection/HeroSection.scss
+@import '../../app/globals.scss'; // Your path
+
+.hero-section {
+    width: 100%;
+    min-height: 90vh; // Or a fixed height like `height: 700px;` FOR TESTING
+    position: relative; // ESSENTIAL for absolute children like the 3D background
+    overflow: hidden; // Good practice
+    display: flex; // For centering hero-content
+    align-items: center;
+    justify-content: center;
+
+    // SET A VERY OBVIOUS BACKGROUND COLOR FOR THE HERO SECTION ITSELF FOR DEBUGGING
+    background-color: #333333; // DARK GREY - so lime green particles will show up
+
+    color: $text-on-blue-bg; // Assuming this is white or light for text on dark bg
+}
+
+.hero-content {
+    position: relative; // To sit on top of the 3D background
+    z-index: 1; // Must be higher than .threejs-background-container's z-index
+    text-align: center;
+    padding: 20px;
+    // ... your other hero content styles ...
+    // Ensure text color here is light (e.g., white)
+}

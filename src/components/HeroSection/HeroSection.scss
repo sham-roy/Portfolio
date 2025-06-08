@@ -1,0 +1,112 @@
+// src/components/HeroSection/HeroSection.scss
+@import '../../app/globals.scss'; // Ensure this path correctly points to your global SCSS variables
+
+.hero-section {
+    // Or your specific section class
+    width: 100%;
+    min-height: 90vh; // Or a fixed height like `height: 700px;`
+    position: relative; // ***** CRITICAL for the absolute positioned background *****
+    overflow: hidden; // Good practice
+    display: flex; // For centering hero-content
+    align-items: center;
+    justify-content: center;
+
+    // IMPORTANT: Set a background color for the section itself.
+    // This color will be BEHIND the Three.js canvas.
+    // If your particles are light (e.g., particleColor prop is '#E0F0FF' or '#FFFFFF'),
+    // this background should be DARK for good contrast.
+    background-color: darken($primary-blue-dark, 10%);
+    // Or use a theme color: darken($primary-blue-dark, 20%);
+}
+
+.hero-content {
+    // Or whatever class wraps your text/buttons on top
+    position: relative; // To sit on top of the 3D background
+    z-index: 1; // Must be higher than .threejs-background-container's z-index
+    text-align: center;
+    padding: 20px;
+    color: $text-on-blue-bg; // Ensure text is light if background is dark
+
+    // ... your styles for h1, p, button within hero-content ...
+    // Make sure they have light colors.
+
+    .hero-title {
+        font-size: 3.2rem;
+        color: $text-on-blue-bg;
+        margin-bottom: 0.75rem;
+        font-weight: 700;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+        line-height: 1.2;
+
+        @media (max-width: 768px) {
+            // Standard tablet breakpoint
+            font-size: 2.5rem;
+        }
+
+        @media (max-width: 480px) {
+            // Standard mobile breakpoint
+            font-size: 2.1rem;
+        }
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+        color: lighten($text-on-blue-bg, 15%);
+        margin-bottom: 1.5rem;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+
+        @media (max-width: 768px) {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 1.1rem;
+        }
+    }
+
+    .hero-description {
+        font-size: 1.05rem;
+        color: lighten($text-on-blue-bg, 25%);
+        margin-bottom: 2.5rem;
+        line-height: 1.7;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 768px) {
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .hero-cta-button {
+        background-color: $accent-blue;
+        color: $primary-blue-dark;
+        padding: 12px 30px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: $border-radius-pill;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        border: none;
+        box-shadow: 0 4px 12px rgba(darken($accent-blue, 10%), 0.3);
+        transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+
+        &:hover {
+            background-color: darken($accent-blue, 8%);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 18px rgba(darken($accent-blue, 10%), 0.4);
+            text-decoration: none;
+            color: $primary-blue-dark;
+        }
+
+        &:active {
+            transform: translateY(0px) scale(0.98);
+            box-shadow: 0 2px 8px rgba(darken($accent-blue, 10%), 0.3);
+        }
+    }
+}

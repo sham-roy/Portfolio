@@ -156,22 +156,27 @@ ul {
     }
 }
 
-// --- Section Styling (Revised for Cleaner Separation) ---
 .section {
-    padding: 50px 0;
-    background-color: $background-white; // Default background for sections
-    border-radius: $border-radius-large;
+    padding: 50px 0; // RESTORED: Internal vertical padding for content within the section
+    // Adjust this value (e.g., 40px, 60px) as needed for visual comfort.
+    background-color: $background-white;
+    // border-radius: $border-radius-large;
     box-shadow: $box-shadow-strong;
 
-    &:not(:first-child) {
-        margin-top: 40px;
+    // Default top margin for sections (will apply from the 3rd section onwards)
+    margin-top: 5px; // This is the standard space BETWEEN sections
+
+    &:first-child {
+        // Targets the very first .section child of its parent
+        margin-top: 0;
     }
 
-    &:first-of-type {
-        margin-top: 30px;
+    // Ensure last section before footer has no bottom margin
+    &:last-child {
+        margin-bottom: 0;
     }
-
 }
+
 
 // --- Card Styling (for experience, projects, etc.) ---
 .card {
@@ -242,4 +247,15 @@ ul {
 
 .education-cert-summary {
     margin-bottom: 2.5rem;
+}
+
+.threejs-background-container {
+    display: block; // Ensures clientWidth/Height are reliable for the ResizeObserver
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; // Or -1, ensures it's behind other content in the parent section
+    // background-color: rgba(255, 0, 0, 0.1); // Optional: for debugging its size
 }
