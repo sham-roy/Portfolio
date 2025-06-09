@@ -178,7 +178,6 @@ export const technicalSkills = [
       { name: "Nest.js", icon: <SiNestjs /> }
     ]
   },
-  
   {
     category: "Databases (Familiarity)", // As per your resume
     skills: [
