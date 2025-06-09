@@ -1,9 +1,9 @@
 // src/app/layout.js
-import "./globals.scss";
+import './globals.scss';
 import SEO_CONFIG from '../../seo.config.js';
 import { Roboto, Montserrat } from 'next/font/google';
 
-const roboto = Roboto({ /* ... your config ... */
+const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
@@ -11,7 +11,8 @@ const roboto = Roboto({ /* ... your config ... */
   variable: '--font-roboto',
   preload: true,
 });
-const montserrat = Montserrat({ /* ... your config ... */
+
+const montserrat = Montserrat({
   weight: ['300', '400', '500', '600', '700', '800'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
@@ -21,7 +22,7 @@ const montserrat = Montserrat({ /* ... your config ... */
 });
 
 export const metadata = {
-  metadataBase: new URL(SEO_CONFIG.openGraph.url), // From your seo.config.js
+  metadataBase: new URL(SEO_CONFIG.openGraph.url),
   title: {
     default: SEO_CONFIG.defaultTitle,
     template: SEO_CONFIG.titleTemplate,
@@ -31,26 +32,45 @@ export const metadata = {
     type: SEO_CONFIG.openGraph.type,
     locale: SEO_CONFIG.openGraph.locale,
     url: SEO_CONFIG.openGraph.url,
-    siteName: SEO_CONFIG.openGraph.site_name, // Note: Next.js uses siteName
-    // You can add a default OG image here if it's an ABSOLUTE URL
-    // images: [{ url: '/default-og.jpg', width: 1200, height: 630, alt: 'Default Site Image' }],
+    siteName: SEO_CONFIG.openGraph.site_name,
+    images: [
+      {
+        url: '/images/main.png',
+        width: 1200,
+        height: 630,
+        alt: 'Sham Roy - Full Stack Developer from Kochi',
+      },
+    ],
   },
   twitter: {
-    card: SEO_CONFIG.twitter.cardType === 'summary_large_image' ? 'summary_large_image' : 'summary',
-    // site: '@YourTwitterSiteHandle', // Define in seo.config.js or here
-    // creator: '@YourTwitterCreatorHandle', // Define in seo.config.js or here
+    card: SEO_CONFIG.twitter.cardType,
+    site: SEO_CONFIG.twitter.site,
+    creator: SEO_CONFIG.twitter.handle,
   },
-  // Add other global metadata like icons, manifest, theme-color etc.
-  // icons: { icon: '/favicon.ico' },
-  // manifest: '/site.webmanifest',
+  icons: {
+    icon: '/favicon.ico',
+  },
+  manifest: '/site.webmanifest',
+  themeColor: '#0A192F',
+  keywords: [
+    'Sham Roy', 'Web Developer', 'Frontend Developer', 'Next.js',
+    'React.js', 'Angular', 'MERN stack', 'MEAN stack', 'Kochi', 'Kerala'
+  ],
+  authors: [{ name: 'Sham Roy', url: SEO_CONFIG.openGraph.url }],
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+  },
+  alternates: {
+    canonical: SEO_CONFIG.openGraph.url,
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${roboto.variable} ${montserrat.variable}`}>
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

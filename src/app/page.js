@@ -14,58 +14,89 @@ const Contact = dynamic(() => import('../components/Contact/Contact'));
 const Footer = dynamic(() => import('../components/Footer/Footer'));
 // import PageSeo from '../components/Seo/PageSeo';
 import { contactInfo } from '../data/resumeData.js'; // For JSON-LD sameAs
-const YOUR_DOMAIN = "https://syroyce.in";
+const DOMAIN = "https://syroyce.in";
 
 export async function generateMetadata() {
+  const DOMAIN = "https://syroyce.in";
   const pageTitle = "Sham Roy - Top MERN & Frontend Developer in Kochi";
   const pageDescription = "Expert MERN stack, MEAN stack, React, and Next.js frontend developer in Kochi, Kerala. Building high-performance, engaging web applications.";
-  const ogImageUrl = `${YOUR_DOMAIN}/images/Screenshot From 2025-06-08 21-14-52.png`;
+  const ogImageUrl = `${DOMAIN}/images/main.png`;
 
   const personJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Sham Roy',
-    url: YOUR_DOMAIN + "/",
+    url: DOMAIN + "/",
     jobTitle: 'MERN Stack Developer, Frontend Developer',
     worksFor: { '@type': 'Organization', name: 'Sham Roy (Portfolio)' },
     address: { '@type': 'PostalAddress', addressLocality: 'Kochi', addressRegion: 'KL', addressCountry: 'IN' },
-    sameAs: [contactInfo.linkedinUrl, contactInfo.githubUrl], // Ensure contactInfo is accessible here
-    knowsAbout: ['MERN Stack', 'MEAN Stack', 'React.js', 'Next.js', 'Frontend Development', 'Kochi Developer']
+    sameAs: [
+      contactInfo.linkedinUrl,
+      contactInfo.githubUrl,
+      contactInfo.instagramUrl,
+      contactInfo.twitterUrl,
+      contactInfo.facebookUrl,
+      // contactInfo.snapchatUrl,
+      // contactInfo.redditUrl,
+      // contactInfo.whatsappUrl,
+    ],
+    knowsAbout: ['MERN Stack', 'MEAN Stack', 'React.js', 'Next.js', 'Frontend Development', 'Kochi Developer'],
   };
+
   return {
-    title: pageTitle, // This will be used by title.template from layout.js
+    title: pageTitle,
     description: pageDescription,
-    keywords: ['MERN stack developer Kochi', 'MEAN stack developer Kochi', 'frontend developer Kochi', 'React developer Kochi', 'Next.js developer Kerala', 'web developer India', 'Sham Roy', 'best developer Kochi'],
+    keywords: [
+      'MERN stack developer Kochi',
+      'MEAN stack developer Kochi',
+      'frontend developer Kochi',
+      'React developer Kochi',
+      'Next.js developer Kerala',
+      'web developer India',
+      'Sham Roy',
+      'best developer Kochi',
+    ],
     alternates: {
-      canonical: YOUR_DOMAIN + "/",
+      canonical: DOMAIN + "/",
     },
     openGraph: {
-      title: "Sham Roy - Leading Web & MERN Stack Developer, Kochi", // Specific OG Title
-      description: "Portfolio of Sham Roy, a top MERN, MEAN, and frontend developer in Kochi.", // Specific OG Desc
-      url: YOUR_DOMAIN + "/",
+      title: pageTitle,
+      description: pageDescription,
+      url: DOMAIN + "/",
+      siteName: "Sham Roy Portfolio",
       images: [
         {
-          url: ogImageUrl, // Relative path from /public, or absolute URL
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: 'Sham Roy - Portfolio | MERN & Frontend Developer, Kochi',
-          type: 'image/jpeg', // Or png
+          type: 'image/jpeg',
         },
       ],
-      // siteName will be inherited from layout.js metadata
-      // type: 'website', // Can inherit
-      // locale: 'en_IN', // Can inherit
+      type: 'website',
+      locale: 'en_IN',
     },
     twitter: {
       card: 'summary_large_image',
-      title: "Sham Roy - Leading Web & MERN Stack Developer, Kochi", // Often good to mirror OG title
-      description: "Portfolio of Sham Roy, a top MERN, MEAN, and frontend developer in Kochi.",
-      images: [ogImageUrl], // Twitter often uses the first OG image
-      // creator: '@YourTwitterHandle',
+      title: pageTitle,
+      description: pageDescription,
+      images: [ogImageUrl],
+      site: '@SyRoyce____',
+      creator: '@SyRoyce____',
     },
+    // Optional manual meta tags for Facebook/LinkedIn if you want to add:
+    meta: [
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: pageTitle },
+      { property: 'og:description', content: pageDescription },
+      { property: 'og:url', content: DOMAIN + '/' },
+      { property: 'og:image', content: ogImageUrl },
+      { property: 'og:site_name', content: 'Sham Roy Portfolio' },
+      { property: 'linkedin:owner', content: 'https://www.linkedin.com/in/shyam-roy/' },
+      { property: 'fb:profile_id', content: 'shyam.roy.50746444' }, // Optional
+    ],
   };
 }
-
 
 
 export default function Home() {
@@ -74,7 +105,7 @@ export default function Home() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Sham Roy',
-    url: YOUR_DOMAIN + "/",
+    url: DOMAIN + "/",
     jobTitle: 'MERN Stack Developer, Frontend Developer',
     worksFor: { '@type': 'Organization', name: 'Sham Roy (Portfolio)' },
     address: { '@type': 'PostalAddress', addressLocality: 'Kochi', addressRegion: 'KL', addressCountry: 'IN' },
