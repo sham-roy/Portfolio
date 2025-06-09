@@ -84,9 +84,9 @@ export const technicalSkills = [
       { name: "Angular", icon: <DiAngularSimple /> },
       { name: "Redux (Redux Toolkit)", icon: <SiRedux /> },
       { name: "Zustand" },
-      { name: "React Router" }, // Common routing library
-      { name: "Material-UI (MUI)" }, // Popular UI library
-      { name: "Ant Design" }, // Another popular UI library
+      { name: "React Router" },
+      { name: "Material-UI (MUI)" },
+      { name: "Ant Design" },
     ]
   },
   {
@@ -98,7 +98,7 @@ export const technicalSkills = [
       { name: "Tailwind CSS", icon: <SiTailwindcss /> },
       { name: "Bootstrap", icon: <SiBootstrap /> },
       { name: "Styled Components" },
-      { name: "Framer Motion" }, // For animations
+      { name: "Framer Motion" },
       { name: "Responsive Web Design" },
       { name: "Cross-Browser Compatibility" }
     ]
@@ -115,7 +115,7 @@ export const technicalSkills = [
     skills: [
       { name: "RESTful APIs" },
       { name: "GraphQL", icon: <SiGraphql /> },
-      { name: "Apollo Client", icon: <SiApollographql /> }, // If used with GraphQL
+      { name: "Apollo Client", icon: <SiApollographql /> },
       { name: "Axios / Fetch API" },
       { name: "WebSockets", icon: <SiSocketdotio /> },
     ]
@@ -126,7 +126,7 @@ export const technicalSkills = [
       { name: "OAuth 2.0" },
       { name: "JWT (JSON Web Tokens)" },
       { name: "Firebase Authentication", icon: <DiFirebase /> },
-      { name: "NextAuth.js" } // If used with Next.js
+      { name: "NextAuth.js" }
     ]
   },
   {
@@ -134,30 +134,30 @@ export const technicalSkills = [
     skills: [
       { name: "Webpack", icon: <SiWebpack /> },
       { name: "Babel", icon: <SiBabel /> },
-      { name: "Vite", icon: <SiVite /> }, // Modern build tool
+      { name: "Vite", icon: <SiVite /> },
       { name: "npm / yarn", icon: <DiNpm /> },
-      { name: "pnpm" } // Another package manager
+      { name: "pnpm" }
     ]
   },
-  {
-    category: "Testing & Quality Assurance",
-    skills: [
-      { name: "Jest", icon: <SiJest /> },
-      { name: "React Testing Library", icon: <SiTestinglibrary /> },
-      { name: "Cypress / Playwright" }, // E2E testing
-      { name: "Unit Testing" },
-      { name: "Integration Testing" }
-    ]
-  },
+  // {
+  //   category: "Testing & Quality Assurance",
+  //   skills: [
+  //     { name: "Jest", icon: <SiJest /> },
+  //     { name: "React Testing Library", icon: <SiTestinglibrary /> },
+  //     { name: "Cypress / Playwright" },
+  //     { name: "Unit Testing" },
+  //     { name: "Integration Testing" }
+  //   ]
+  // },
   {
     category: "Development Tools & Platforms",
     skills: [
       { name: "Git & GitHub/GitLab/Bitbucket", icon: <DiGit /> },
-      { name: "VS Code" }, // Common IDE
+      { name: "VS Code" },
       { name: "Browser Developer Tools" },
-      { name: "Jira / Asana / Trello" }, // Project Management
-      { name: "Storybook", icon: <SiStorybook /> }, // UI component development
-      { name: "ESLint / Prettier", icon: <SiEslint /> }, // Linting & Formatting
+      { name: "Jira / Asana / Trello" },
+      { name: "Storybook", icon: <SiStorybook /> },
+      { name: "ESLint / Prettier", icon: <SiEslint /> },
     ]
   },
   {
