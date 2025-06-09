@@ -56,6 +56,10 @@ $gradient-profile-summary: linear-gradient(to right bottom, lighten($primary-blu
 $gradient-skills-section: linear-gradient(160deg, $background-white, rgba($primary-blue, 0.05));
 
 
+//---Breakpoints
+$mobile-width: 425px;
+
+
 // --- Global Resets & Defaults ---
 * {
     box-sizing: border-box;
@@ -157,7 +161,7 @@ ul {
 }
 
 .section {
-    padding: 50px 0;
+    padding: 20px 0;
     background-color: $background-white;
     // border-radius: $border-radius-large;
     box-shadow: $box-shadow-soft;

@@ -15,8 +15,6 @@
         transform: translateX(50px);
     }
 
-    // Add more animation types if needed
-
     &.is-visible {
         opacity: 1;
         transform: translateY(0) translateX(0);

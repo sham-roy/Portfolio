@@ -4,11 +4,8 @@
 
 
 .certification-section-framed-stacked {
-    // Updated class name
-    // .section global styles apply
 
     .framed-section-title {
-        /* Styles from previous version */
         display: flex;
         align-items: center;
         gap: 12px;
@@ -25,23 +22,20 @@
     }
 
     .section-summary {
-        /* Styles from previous version */
         margin-bottom: 3rem;
     }
 
     .certification-frame {
-        /* Styles for the outer frame from previous version */
         background-color: $background-white;
         padding: 30px 35px;
         // border-radius: $border-radius;
         border: 1px solid $primary-blue-light;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04), 0 0 0 4px rgba($primary-blue-xtra-light, 0.5);
-        max-width: 700px; // Can be slightly narrower if content is mostly vertical
+        max-width: 700px;
         margin: 0 auto;
     }
 
     .cert-header-area {
-        /* Styles from previous version */
         text-align: center;
         padding-bottom: 20px;
         margin-bottom: 20px;
@@ -66,43 +60,40 @@
     // --- MODIFIED: Stacked Details Layout ---
     .cert-details-stacked-list {
         display: flex;
-        flex-direction: column; // Stack items vertically
-        gap: 15px; // Space between each detail item
-        margin-bottom: 25px; // Space before the next separator or content block
-
-        // Remove bottom border if it's the last content before footer of the card
-        // This will be handled by the new separator logic more cleanly
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 25px;
     }
 
     .detail-item-stacked {
-        display: flex; // Icon and text block side-by-side
-        align-items: flex-start; // Align icon to the top of the text block
-        gap: 12px; // Space between icon and text block
-        padding-bottom: 10px; // Space for a subtle underline on each item
-        border-bottom: 1px solid $border-color-light; // Underline each detail item
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $border-color-light;
 
         &:last-child {
-            border-bottom: none; // No underline for the last item in this stack
+            border-bottom: none;
             padding-bottom: 0;
         }
 
         .detail-icon-stacked {
-            font-size: 1.2rem; // Consistent icon size
+            font-size: 1.2rem;
             color: $primary-blue;
-            margin-top: 3px; // Fine-tune vertical alignment with label
+            margin-top: 3px;
             flex-shrink: 0;
-            width: 20px; // Give icon a fixed width for alignment
+            width: 20px;
             text-align: center;
         }
 
         .detail-text-stacked {
-            flex-grow: 1; // Text block takes remaining space
-            text-align: left; // Ensure text within is left-aligned
+            flex-grow: 1;
+            text-align: left;
 
             .detail-label-stacked {
                 display: block;
                 font-size: 0.8rem;
-                color: $text-color-light; // Lighter color for label
+                color: $text-color-light;
                 text-transform: uppercase;
                 letter-spacing: 0.5px;
                 margin-bottom: 2px;
@@ -110,7 +101,7 @@
 
             .detail-value-stacked {
                 font-size: 0.95rem;
-                color: $text-color-dark; // Darker color for actual value
+                color: $text-color-dark;
                 font-weight: 500;
                 margin: 0;
                 line-height: 1.4;
@@ -119,7 +110,7 @@
                     // For training provider
                     font-style: normal;
                     color: $primary-blue;
-                    font-weight: 500; // Make it stand out a bit
+                    font-weight: 500;
                 }
             }
         }
@@ -127,21 +118,18 @@
 
     // --- End of Stacked Details Layout ---
 
-
     .cert-additional-info-separator {
-        // Separator before description/skills if details are stacked
         width: 100%;
         height: 1px;
-        background-color: $border-color-light; // Dashed or solid
-        // border-top: 1px dashed $border-color-light; // Alternative
-        margin: 25px 0; // Space around separator
+        background-color: $border-color-light;
+        // border-top: 1px dashed $border-color-light; 
+        margin: 25px 0;
     }
 
 
-    // Description and Skills styling can remain largely the same as previous "Framed & Focused"
     .cert-description-area-framed,
     .cert-skills-area-framed {
-        margin-bottom: 15px; // Reduced bottom margin, as separator handles some space
+        margin-bottom: 15px;
 
         &:last-child {
             margin-bottom: 0;
@@ -176,7 +164,6 @@
             display: flex;
             flex-wrap: wrap;
             gap: 6px 8px;
-            // .skill-tag and .cert-skill-tag use global styles
         }
     }
 }

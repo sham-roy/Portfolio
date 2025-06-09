@@ -1,7 +1,8 @@
 // src/components/Footer/Footer.scss
 @import '../../app/globals.scss'; // Ensure this path is correct
 
-.two-col-built-right-footer { // New main class
+.two-col-built-right-footer {
+    // New main class
     background-color: $primary-blue-dark;
     color: lighten($text-on-blue-bg, 35%);
     padding: 15px 0;
@@ -91,7 +92,8 @@
         }
     }
 
-    .footer-built-with-on-right { // Styling for "Built with" on the right
+    .footer-built-with-on-right {
+        // Styling for "Built with" on the right
         margin: 0;
         display: flex;
         align-items: center;
@@ -124,19 +126,32 @@
                 color: $text-on-blue-bg;
                 transform: scale(1.1);
             }
-            svg { vertical-align: middle; }
+
+            svg {
+                vertical-align: middle;
+            }
         }
     }
 
 
     // --- Back to Top Button ---
-    .back-to-top-built-right { // Updated class name
+    .back-to-top-built-right {
+        // Updated class name
         position: fixed;
-        bottom: 12px; right: 12px; width: 32px; height: 32px;
-        font-size: 0.9rem; background-color: $accent-blue;
-        color: $primary-blue-dark; border: none; border-radius: 50%;
-        display: flex; justify-content: center; align-items: center;
-        cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+        bottom: 12px;
+        right: 12px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+        background-color: $accent-blue;
+        color: $primary-blue-dark;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
         transition: background-color 0.2s ease, transform 0.2s ease;
         z-index: 1000;
 

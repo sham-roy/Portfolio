@@ -2,12 +2,12 @@
 @import '../../app/globals.scss';
 
 .portfolio-main-header {
-  position: fixed; // Fixed position to stay at the top
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 1000; // Ensure it's above other content
-  padding: 15px 0; // Compact padding
+  width: 100vw;
+  z-index: 1000;
+  padding: 15px 0;
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, padding 0.3s ease-in-out;
 
   .header-nav-content {
@@ -19,7 +19,7 @@
   .nav-logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: $text-on-blue-bg; // Default for transparent header on dark hero
+    color: $text-on-blue-bg;
     text-decoration: none;
     font-family: $font-headings;
     transition: color 0.3s ease-in-out;
@@ -30,7 +30,7 @@
     gap: 20px;
 
     .nav-link {
-      color: lighten($text-on-blue-bg, 15%); // Default for transparent header
+      color: lighten($text-on-blue-bg, 15%);
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 500;
@@ -47,7 +47,7 @@
 
       &:hover {
         color: $text-on-blue-bg; // Brighter on hover
-        background-color: rgba(255, 255, 255, 0.1); // Subtle hover bg for transparent state
+        background-color: rgba(255, 255, 255, 0.1);
         text-decoration: none;
       }
     }
@@ -57,35 +57,28 @@
   &.transparent-header {
     background-color: transparent;
     box-shadow: none;
-    // Logo and links are already styled for dark hero background
   }
 
   // State: Solid Header (when scrolled past hero OR explicitly sticky)
   &.solid-header {
-    background-color: $primary-blue-dark; // Your solid header background
+    background-color: $primary-blue-dark;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    padding: 12px 0; // Slightly more compact padding when solid
+    padding: 12px 0;
 
     .nav-logo {
-      color: $text-on-blue-bg; // Ensure logo is visible on solid bg
+      color: $text-on-blue-bg;
     }
 
     .main-navigation .nav-link {
-      color: lighten($text-on-blue-bg, 25%); // Adjust link color for solid bg
+      color: lighten($text-on-blue-bg, 25%);
 
       &:hover {
         color: $text-on-blue-bg;
-        background-color: rgba($primary-blue-light, 0.2); // Hover bg for solid state
+        background-color: rgba($primary-blue-light, 0.2);
       }
     }
   }
 
-  // State: Sticky Header (can be combined with solid-header, but useful for specific sticky styles if needed)
-  // The .solid-header class will likely handle most visual changes for stickiness.
-  // The .sticky-header class is mostly for the JS logic to know when to apply .solid-header.
-  // If you only rely on hero visibility, you might not even need a separate .sticky-header class here.
-  // However, the JS logic uses it to trigger the solid state if scrolled past a certain point
-  // regardless of hero section (e.g., if hero is very short).
 }
 
 // Responsive adjustments for header/nav
@@ -97,7 +90,7 @@
     }
 
     .main-navigation {
-      // display: none; // Hide for hamburger menu
+      // display: none;
       gap: 10px;
 
       .nav-link {
@@ -107,8 +100,6 @@
         svg {
           display: none;
         }
-
-        // Hide icons on small screens to save space, show only text
       }
     }
 

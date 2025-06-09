@@ -103,13 +103,13 @@ export const technicalSkills = [
       { name: "Cross-Browser Compatibility" }
     ]
   },
-  {
-    category: "State Management (Advanced)", // Can be separate or merged
-    skills: [
-      { name: "Redux Saga / Thunk" }, // If you've used middleware
-      { name: "React Query / SWR" }, // For server state
-    ]
-  },
+  // {
+  //   category: "State Management (Advanced)", // Can be separate or merged
+  //   skills: [
+  //     { name: "Redux Saga / Thunk" }, // If you've used middleware
+  //     { name: "React Query / SWR" }, // For server state
+  //   ]
+  // },
   {
     category: "APIs & Data Fetching",
     skills: [

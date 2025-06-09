@@ -1,5 +1,3 @@
-
-
 // src/components/Skills/Skills.scss
 @import '../../app/globals.scss';
 
@@ -11,9 +9,13 @@
 
   .skills-flow-container {
     // Change this from flex to multi-column
-    column-count: 3; // Start with 3 columns, adjust based on preference/screen width
-    column-gap: 25px; // Gap between columns
-    column-fill: balance; // Tries to make columns of similar height (browser support varies);
+    column-count: 3;
+    column-gap: 25px;
+    column-fill: balance;
+
+    @media (width < 768px) {
+      column-count: 1;
+    }
   }
 
   .skill-category-flow-item {
@@ -21,8 +23,10 @@
     padding: 8px 12px;
     border-radius: 6px;
     background-color: rgba($primary-blue-xtra-light, 0.3);
-    margin-bottom: 15px; // Space between items within the same column
+    margin-bottom: 15px;
     break-inside: avoid-column; // Tries to prevent an item from breaking across columns
+
+
 
     h3 {
       font-size: 1.05rem;
@@ -35,7 +39,7 @@
     }
 
     .skills-list-flow {
-      display: flex; // Keep flex for tags *within* a category item
+      display: flex;
       flex-wrap: wrap;
       gap: 6px 8px;
     }

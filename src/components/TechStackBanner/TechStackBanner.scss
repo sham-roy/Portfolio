@@ -1,23 +1,22 @@
 // src/components/TechStackBanner/TechStackBanner.scss
-@import '../../app/globals.scss'; 
+@import '../../app/globals.scss';
 
-.tech-stack-banner-compact { 
-  padding: 5px 0; 
-  background-color: $primary-blue-dark; 
-  // border-top: 1px solid $border-color-light; // Optional: very thin border
-  // border-bottom: 1px solid $border-color-light; // Optional: very thin border
+.tech-stack-banner-compact {
+  padding: 5px 0;
+  background-color: $primary-blue-dark;
+  // border-top: 1px solid $border-color-light; 
+  // border-bottom: 1px solid $border-color-light; 
   overflow: hidden;
 }
 
 .tech-banner-container {
-  // Uses global .container for max-width, but local padding is minimal
-  padding-left: 10px; // Minimal internal padding for the container if needed
+  padding-left: 10px; 
   padding-right: 10px;
 }
 
 .tech-banner-title-compact {
   text-align: center;
-  font-size: 0.9rem; 
+  font-size: 0.9rem;
   color: $text-color-medium;
   margin-bottom: 10px;
   font-weight: 500;
@@ -28,9 +27,8 @@
 .tech-marquee-wrapper {
   width: 100%;
   overflow: hidden;
-  // Optional: fade edges - more important if background is not transparent
-  // mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-  // -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
 
 .tech-logo-scroller {
@@ -47,9 +45,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $text-color-medium;
-  padding: 0 10px; 
-  height: 35px; 
+  color: $text-on-blue-bg;
+  padding: 0 10px;
+  height: 35px;
   transition: transform 0.15s ease, color 0.15s ease; // Quicker transition
   flex-shrink: 0;
 
@@ -58,16 +56,15 @@
     line-height: 1;
   }
 
-  // Names are off by default for ultra-compactness
-  // .tech-name-compact {
-  //   font-size: 0.6rem; // Tiny if shown
-  //   color: $text-color-light;
-  //   margin-left: 4px; // If showing name next to icon
-  // }
+  .tech-name-compact {
+    font-size: 0.6rem; // Tiny if shown
+    color: $text-color-light;
+    margin-left: 4px; // If showing name next to icon
+  }
 
   &:hover {
-    transform: scale(1.1); 
-    color: $background-off-white;
+    transform: scale(1.1);
+    color: $text-color-dark;
   }
 }
 
@@ -75,6 +72,7 @@
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
