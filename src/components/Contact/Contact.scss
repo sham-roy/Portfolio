@@ -1,29 +1,31 @@
 // src/components/Contact/Contact.scss
-@import '../../app/globals.scss'; // Ensure this path is correct
+@import '../../app/globals.scss';
 
 .contact-section-two-col-refined {
-  // Keeping class name for consistency with your JSX
   background-color: $background-off-white;
-  padding: 50px 0 70px; // Increased bottom padding slightly
-  overflow: hidden; // Good for containing any subtle overflow from animations
+  padding: 50px 0 70px;
+  overflow: hidden;
 
   .section-header-contact {
     text-align: center;
-    margin-bottom: 35px; // Slightly more space
+    margin-bottom: 35px;
 
     h2 {
-      font-size: 2.1rem; // Slightly larger if desired
+      font-size: 2.1rem;
       color: $primary-blue-dark;
       margin-bottom: 12px;
     }
 
     .contact-intro-text {
-      font-size: 1.05rem; // Slightly larger
+      font-size: 1.05rem;
       color: $text-color-medium;
       line-height: 1.65;
       max-width: 620px;
       margin: 0 auto;
-      // text-align: left; // Reverted to center to match h2 if section-header is centered
+
+      @media (width < 768) {
+        text-align: left;
+      }
     }
   }
 
@@ -35,15 +37,14 @@
 
   .contact-form-panel-main {
     background-color: $background-white;
-    padding: 30px 40px; // Adjusted padding slightly
-    border-radius: $border-radius-large; // Softer, more modern radius (e.g., 12px)
-    box-shadow: $box-shadow-medium; // Slightly more defined shadow (e.g., 0 6px 20px rgba(0,0,0,0.08))
+    padding: 30px 40px;
+    border-radius: $border-radius-large;
+    box-shadow: $box-shadow-medium;
     width: 100%;
     max-width: 700px;
     border: 1px solid $border-color-light;
-    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; // For panel hover
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 
-    // Optional: Subtle hover effect on the entire form panel
     &:hover {
       box-shadow: 0 8px 25px rgba(darken($primary-blue, 10%), 0.12);
       transform: translateY(-3px);
@@ -51,12 +52,12 @@
   }
 
   .panel-title {
-    font-size: 1.5rem; // Slightly larger title
+    font-size: 1.5rem;
     color: $primary-blue;
     margin-top: 0;
-    margin-bottom: 30px; // More space below title
+    margin-bottom: 30px;
     padding-bottom: 12px;
-    border-bottom: 2px solid $primary-blue-xtra-light; // Slightly thicker/more visible border
+    border-bottom: 2px solid $primary-blue-xtra-light;
     font-weight: 600;
     text-align: left;
   }
@@ -64,7 +65,7 @@
   .main-contact-form {
     display: flex;
     flex-direction: column;
-    gap: 20px; // Keep good gap
+    gap: 20px;
   }
 
   .form-row-contact {
@@ -73,7 +74,7 @@
     gap: 20px;
   }
 
-  
+
   .form-group-contact {
     display: flex;
     flex-direction: column;
@@ -100,17 +101,17 @@
     input[type="email"],
     textarea {
       padding: 12px 15px;
-      border: 1px solid $border-color; // Default border
+      border: 1px solid $border-color;
       border-radius: $border-radius-small;
       font-size: 0.95rem;
       font-family: $font-primary;
-      background-color: lighten($primary-blue-xtra-light, 6%); // Default light blue input background
+      background-color: lighten($primary-blue-xtra-light, 6%);
       color: $text-color-dark;
       transition: // Combined transitions for smoothness
         border-color 0.25s ease-in-out,
         box-shadow 0.25s ease-in-out,
         background-color 0.25s ease-in-out,
-        transform 0.15s ease-out; // Added transform for hover lift
+        transform 0.15s ease-out;
 
       &::placeholder {
         color: $text-color-light;
@@ -119,23 +120,21 @@
 
       // --- HOVER STATE ---
       &:hover {
-        border-color: darken($primary-blue-light, 10%); // Border becomes a slightly darker shade of light blue
-        background-color: lighten($primary-blue-xtra-light, 3%); // Background becomes slightly less light blue
-        // transform: translateY(-1px); // Optional: very subtle lift
-        // box-shadow: 0 2px 4px rgba(0,0,0,0.03); // Optional: very subtle shadow
+        border-color: darken($primary-blue-light, 10%);
+        background-color: lighten($primary-blue-xtra-light, 3%);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
       }
 
-      // --- FOCUS STATE ---
       &:focus {
         outline: none;
-        border-color: $primary-blue; // Border becomes primary blue
-        background-color: $background-white; // Background becomes white for typing clarity
-        box-shadow: 0 0 0 3px rgba($primary-blue, 0.25); // Focus ring
-        transform: translateY(0); // Reset any hover transform
+        border-color: $primary-blue;
+        background-color: $background-white;
+        box-shadow: 0 0 0 3px rgba($primary-blue, 0.25);
+        transform: translateY(0);
       }
     }
 
-    // When any input/textarea within the form group is focused, style the label
     &:focus-within {
       label {
         color: $primary-blue;
@@ -181,8 +180,7 @@
     svg {
       font-size: 1.1em;
       transition: transform 0.25s ease-out;
-      // Removed continuous bobbing by default, can be re-added if desired
-      // animation: subtle-plane-bob 2s ease-in-out infinite alternate;
+      animation: subtle-plane-bob 2s ease-in-out infinite alternate;
     }
 
     &:hover {
@@ -191,7 +189,7 @@
       transform: translateY(-2px);
 
       svg {
-        transform: translateX(4px) scale(1.12) rotate(5deg); // More dynamic icon movement
+        transform: translateX(4px) scale(1.12) rotate(5deg);
       }
     }
 
@@ -201,7 +199,6 @@
       background-color: darken($primary-blue, 12%);
     }
 
-    // Ripple effect (ensure @keyframes ripple is defined)
     &::after {
       content: "";
       position: absolute;
@@ -222,7 +219,6 @@
   }
 }
 
-// Keyframes for ripple (ensure this is present, can be in globals.scss or here)
 @keyframes ripple {
   0% {
     transform: scale(0, 0) translate(-50%, -50%);
@@ -230,13 +226,11 @@
   }
 
   100% {
-    // Adjust scale based on button size, e.g., 40 or 50 for larger buttons
     transform: scale(35, 35) translate(-50%, -50%);
     opacity: 0;
   }
 }
 
-// Optional: Keyframes for subtle plane bobbing (if you re-enable it)
 @keyframes subtle-plane-bob {
   0% {
     transform: translateY(0px);

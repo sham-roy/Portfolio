@@ -43,20 +43,17 @@ const keyTechSecondary = [ // Add more or less important ones here for variety
 
 // Combine and duplicate for seamless marquee effect
 const allTechLogos = [...keyTechPrimary, ...keyTechSecondary];
-const duplicatedLogos = [...allTechLogos, ...allTechLogos]; // Duplicate the array for marquee
+const duplicatedLogos = [...allTechLogos, ...allTechLogos]; 
 
 const TechStackBanner = () => {
   return (
-    <div className="tech-stack-banner-compact"> {/* Renamed class */}
+    <div className="tech-stack-banner-compact">
       <div className="container tech-banner-container">
-        {/* Optional Title */}
-        {/* <h3 className="tech-banner-title-compact">My Tech Arsenal</h3> */}
-        <div className="tech-marquee-wrapper"> {/* Wrapper for overflow hidden */}
+        <div className="tech-marquee-wrapper">
           <div className="tech-logo-scroller">
             {duplicatedLogos.map((tech, index) => (
               <div className="tech-logo-item-compact" key={`${tech.name}-${index}`} title={tech.name}>
                 {tech.icon}
-                {/* <span className="tech-name-compact">{tech.name}</span> */} {/* Keep names off for compactness */}
               </div>
             ))}
           </div>

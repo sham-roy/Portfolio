@@ -16,20 +16,17 @@
     }
 
     .section-summary {
-        // Global .section-summary styles apply
         margin-bottom: 2rem;
     }
 
     .education-items-container {
         display: grid;
-        // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // If you want cards side-by-side
-        gap: 20px; // Gap between education items if they are in a grid or just stacked
+        // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+        gap: 20px;
     }
 
     .education-item {
 
-        // Uses global .card style
-        // Specific overrides for education items if .card isn't enough
         h3 {
             // Degree
             color: $primary-blue;
