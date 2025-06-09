@@ -35,6 +35,8 @@ export const contactInfo = {
   linkedinUrl: "https://www.linkedin.com/in/shyam-roy",
   github: "github.com/sham-roy",
   githubUrl: "https://github.com/sham-roy",
+  twitter: 'x.com/SyRoyce____',
+  twitterUrl: 'https://x.com/SyRoyce____',
   location: "Kochi, Kerala, India",
   locationUrl: "https://www.google.com/maps/place/Kochi,+Kerala,+India",
   availability: "Open to challenging remote and on-site frontend opportunities globally", // New field
