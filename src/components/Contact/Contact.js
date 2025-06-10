@@ -16,7 +16,7 @@ const Contact = () => {
 
     return (
         <AnimatedSection className="section contact-section-two-col-refined" id="contact"> {/* New main class */}
-            <div className="container">
+            <div className="container" id='contact'>
                 <div className="section-header-contact"> {/* Consistent section header */}
                     <h2>{heading}</h2>
                     {subheading && (

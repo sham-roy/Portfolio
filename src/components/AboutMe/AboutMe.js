@@ -9,7 +9,7 @@ const AboutMe = () => {
     if (!aboutMe) return null;
     return (
         <AnimatedSection className="section about-me-section">
-            <div className="container">
+            <div className="container" id='profile'>
                 <h2><FaUserTie /> About Me</h2>
                 <div className="about-me-content">
                     {aboutMe.intro && <p className="about-intro">{aboutMe.intro}</p>}

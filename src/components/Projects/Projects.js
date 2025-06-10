@@ -37,7 +37,7 @@ const Projects = () => {
   return (
     <AnimatedSection className="section projects-section">
 
-      <div className="container">
+      <div className="container" id='projects'>
         <h2>Key Projects</h2>
         {sectionSummaries.keyProjects && (
           <p className="section-summary">{sectionSummaries.keyProjects}</p>
