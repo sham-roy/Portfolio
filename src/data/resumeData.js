@@ -31,8 +31,8 @@ export const contactInfo = {
   title: "Frontend Developer | MERN Stack Enthusiast", // More descriptive title
   phone: "+917025825359",
   email: "syroyce@hotmail.com",
-  linkedin: "linkedin.com/in/shyam-roy",
-  linkedinUrl: "https://www.linkedin.com/in/shyam-roy",
+  linkedin: "linkedin.com/in/sham-roy",
+  linkedinUrl: "https://www.linkedin.com/in/sham-roy",
   github: "github.com/sham-roy",
   githubUrl: "https://github.com/sham-roy",
   twitter: 'x.com/SyRoyce____',

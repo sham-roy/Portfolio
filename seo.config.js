@@ -45,7 +45,7 @@ const SEO_CONFIG = {
     socialLinks: {
         facebook: "https://www.facebook.com/shyam.roy.50746444",
         instagram: "https://www.instagram.com/sy.royce____",
-        linkedin: "https://www.linkedin.com/in/shyam-roy/",
+        linkedin: "https://www.linkedin.com/in/sham-roy/",
         twitter: "https://twitter.com/SyRoyce____",
         // snapchat: "https://www.snapchat.com/add/your-handle", 
         // reddit: "https://www.reddit.com/user/your-username", 

@@ -92,7 +92,7 @@ export async function generateMetadata() {
       { property: 'og:url', content: DOMAIN + '/' },
       { property: 'og:image', content: ogImageUrl },
       { property: 'og:site_name', content: 'Sham Roy Portfolio' },
-      { property: 'linkedin:owner', content: 'https://www.linkedin.com/in/shyam-roy/' },
+      { property: 'linkedin:owner', content: 'https://www.linkedin.com/in/sham-roy/' },
       { property: 'fb:profile_id', content: 'shyam.roy.50746444' }, // Optional
     ],
   };
