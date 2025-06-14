@@ -92,6 +92,14 @@ export const technicalSkills = [
     ]
   },
   {
+    category: "Backend (Familiarity)", // As per your resume
+    skills: [
+      { name: "Node.js", icon: <DiNodejsSmall /> },
+      { name: "Express.js", icon: <SiExpress /> },
+      { name: "Nest.js", icon: <SiNestjs /> }
+    ]
+  },
+  {
     category: "UI, Styling & Animation",
     skills: [
       { name: "HTML5", icon: <DiHtml5 /> },
@@ -170,14 +178,6 @@ export const technicalSkills = [
       { name: "Image Optimization" },
       { name: "Lighthouse Audits" },
       { name: "Performance Monitoring" }
-    ]
-  },
-  {
-    category: "Backend (Familiarity)", // As per your resume
-    skills: [
-      { name: "Node.js", icon: <DiNodejsSmall /> },
-      { name: "Express.js", icon: <SiExpress /> },
-      { name: "Nest.js", icon: <SiNestjs /> }
     ]
   },
   {
