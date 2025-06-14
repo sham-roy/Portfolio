@@ -1,0 +1,30 @@
+{
+    "redirects": [
+        {
+            "source": "/(.*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "www.syroyce.in"
+                }
+            ],
+            "destination": "https://syroyce.in/:1",
+            "permanent": true
+        },
+        {
+            "source": "/(.*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "syroyce.in"
+                },
+                {
+                    "type": "protocol",
+                    "value": "http"
+                }
+            ],
+            "destination": "https://syroyce.in/:1",
+            "permanent": true
+        }
+    ]
+}

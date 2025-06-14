@@ -99,6 +99,8 @@ export async function generateMetadata() {
 }
 
 
+
+
 export default function Home() {
   // JSON-LD for Person (can also be generated in generateMetadata and passed, but this is fine too)
   const personJsonLd = {
@@ -112,6 +114,9 @@ export default function Home() {
     sameAs: [contactInfo.linkedinUrl, contactInfo.githubUrl],
     knowsAbout: ['MERN Stack', 'MEAN Stack', 'React.js', 'Next.js', 'Frontend Development', 'Kochi Developer']
   };
+
+
+
 
   return (
     <>

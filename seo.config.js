@@ -20,19 +20,19 @@ const SEO_CONFIG = {
         ],
     },
 
-    // ✅ Twitter meta tags
+    // Twitter meta tags
     twitter: {
         handle: "@SyRoyce____", // Your Twitter handle
         site: "@SyRoyce____",   // Displayed site handle on cards
         cardType: "summary_large_image",
     },
 
-    // ✅ Canonical URL (SEO best practice)
+    // Canonical URL (SEO best practice)
     alternates: {
         canonical: "https://www.syroyce.in/",
     },
 
-    // ✅ Modern SEO tags (HTML5 and social friendly)
+    // Modern SEO tags
     additionalMetaTags: [
         { name: "author", content: "Sham Roy" },
         { name: "keywords", content: "Sham Roy, Web Developer, Frontend Developer, Next.js, React.js, Angular, MERN stack, MEAN stack, Kochi, Kerala" },
@@ -41,8 +41,7 @@ const SEO_CONFIG = {
         { httpEquiv: "Content-Type", content: "text/html; charset=UTF-8" },
     ],
 
-    // 🟦 FUTURE SOCIAL MEDIA INTEGRATIONS (to be updated later):
-
+    // SOCIAL MEDIA INTEGRATIONS
     socialLinks: {
         facebook: "https://www.facebook.com/shyam.roy.50746444",
         instagram: "https://www.instagram.com/sy.royce____",
