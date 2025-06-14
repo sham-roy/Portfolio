@@ -48,7 +48,7 @@ export const metadata = {
     creator: SEO_CONFIG.twitter.handle,
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/logo/syroyce-log.png',
   },
   manifest: '/site.webmanifest',
   themeColor: '#0A192F',

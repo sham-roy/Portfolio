@@ -50,9 +50,9 @@ const Header = () => {
   return (
     <header className={headerClasses}>
       <div className="container header-nav-content">
-        <a href="#hero" className="nav-logo">
-          {contactInfo.name.split(' ')[0]} {/* Or your actual logo/name */}
-        </a>
+
+        
+
         <nav className="main-navigation">
           {/* Example Nav Links - adapt to your sections */}
           <a href="#hero" className="nav-link"><FaHome /> Home</a>

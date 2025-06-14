@@ -12,7 +12,7 @@
 
   .header-nav-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
   }
 
@@ -23,6 +23,7 @@
     text-decoration: none;
     font-family: $font-headings;
     transition: color 0.3s ease-in-out;
+
   }
 
   .main-navigation {
