@@ -4,7 +4,7 @@ import "./page.scss";
 import dynamic from 'next/dynamic';
 import Header from '../components/Header/Header';
 import HeroSection from '../components/HeroSection/HeroSection';
-const ProfileSummary = dynamic(() => import('../components/ProfileSummary/ProfileSummary'));
+// const ProfileSummary = dynamic(() => import('../components/ProfileSummary/ProfileSummary'));
 const AboutMe = dynamic(() => import('../components/AboutMe/AboutMe'));
 const Skills = dynamic(() => import('../components/Skills/Skills'));
 const TechStackBanner = dynamic(() => import('../components/TechStackBanner/TechStackBanner'));
@@ -131,7 +131,7 @@ export default function Home() {
         <Header />
         <HeroSection />
         <main>
-          <ProfileSummary id="profile" className="section" />
+          {/* <ProfileSummary id="profile" className="section" /> */}
           <AboutMe className="section" />
           <Skills className="section" />
           <Experience className="section" />

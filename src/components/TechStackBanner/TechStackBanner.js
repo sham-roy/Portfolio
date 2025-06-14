@@ -1,13 +1,13 @@
 // src/components/TechStackBanner/TechStackBanner.js
 import React from 'react';
-// Removed AnimatedSection as we'll handle animation directly for the marquee
 import './TechStackBanner.scss';
 import {
   SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiNodedotjs, SiExpress,
   SiMongodb, SiFirebase, SiRedux, SiSass, SiHtml5, SiCss3, SiGit,
-  SiTailwindcss, SiBootstrap, SiWebpack, SiBabel, SiJest, SiSocketdotio, SiDocker, SiKubernetes, SiGraphql, SiApollographql, SiPostgresql, SiPython, SiJava
-  // Add more icons as needed from react-icons/si or react-icons/di
-} from 'react-icons/si'; // Using Si for consistency, Di also works
+  SiTailwindcss, SiBootstrap, SiWebpack, SiBabel, SiJest, SiSocketdotio, SiDocker,
+  SiKubernetes, SiGraphql, SiApollographql, SiPostgresql, SiPython, SiJava
+} from 'react-icons/si';
+import AnimatedSection from '../AnimatedSection/AnimatedSection';
 
 const keyTechPrimary = [
   { name: "JavaScript", icon: <SiJavascript /> },
@@ -43,23 +43,27 @@ const keyTechSecondary = [ // Add more or less important ones here for variety
 
 // Combine and duplicate for seamless marquee effect
 const allTechLogos = [...keyTechPrimary, ...keyTechSecondary];
-const duplicatedLogos = [...allTechLogos, ...allTechLogos]; 
+const duplicatedLogos = [...allTechLogos, ...allTechLogos];
 
 const TechStackBanner = () => {
   return (
-    <div className="tech-stack-banner-compact">
-      <div className="container tech-banner-container">
-        <div className="tech-marquee-wrapper">
-          <div className="tech-logo-scroller">
-            {duplicatedLogos.map((tech, index) => (
-              <div className="tech-logo-item-compact" key={`${tech.name}-${index}`} title={tech.name}>
-                {tech.icon}
-              </div>
-            ))}
+    <AnimatedSection>
+
+      <div className="tech-stack-banner-compact">
+        <div className="container tech-banner-container">
+          <div className="tech-marquee-wrapper">
+            <div className="tech-logo-scroller">
+              {duplicatedLogos.map((tech, index) => (
+                <div className="tech-logo-item-compact" key={`${tech.name}-${index}`} title={tech.name}>
+                  {tech.icon}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </AnimatedSection >
+
   );
 };
 

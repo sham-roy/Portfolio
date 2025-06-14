@@ -5,6 +5,7 @@ import { contactInfo, footerInfo } from '../../data/resumeData';
 import './Footer.scss';
 import { FaArrowUp, FaHeart, FaEnvelope, FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { SiNextdotjs, SiReact, SiSass } from 'react-icons/si';
+import AnimatedSection from '../AnimatedSection/AnimatedSection';
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,51 +34,56 @@ const Footer = () => {
   };
 
   return (
-    <footer className="portfolio-footer two-col-built-right-footer"> {/* New class */}
 
-      <div className="container footer-content-flex">
+    <AnimatedSection> 
 
-        {/* Left Column: Info */}
-        <div className="footer-left-info-col">
-          <p className="footer-copyright-main">
-            © {new Date().getFullYear()} {contactInfo.name}. All Rights Reserved.
-          </p>
-          {footerInfo.closingStatement && (
-            <p className="footer-professional-statement">{footerInfo.closingStatement}</p>
-          )}
-          {footerInfo.tagline && (
-            <p className="footer-tagline">{footerInfo.tagline}</p>
-          )}
+      <footer className="portfolio-footer two-col-built-right-footer"> {/* New class */}
+
+        <div className="container footer-content-flex">
+
+          {/* Left Column: Info */}
+          <div className="footer-left-info-col">
+            <p className="footer-copyright-main">
+              © {new Date().getFullYear()} {contactInfo.name}. All Rights Reserved.
+            </p>
+            {footerInfo.closingStatement && (
+              <p className="footer-professional-statement">{footerInfo.closingStatement}</p>
+            )}
+            {footerInfo.tagline && (
+              <p className="footer-tagline">{footerInfo.tagline}</p>
+            )}
+          </div>
+
+          {/* Right Column: Socials & Built With */}
+          <div className="footer-right-action-col">
+            <div className="footer-social-icons-group">
+              <a href={`mailto:${contactInfo.email}`} aria-label="Email" title="Email"><FaEnvelope /></a>
+              <a href={contactInfo.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><FaLinkedin /></a>
+              <a href={contactInfo.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><FaGithub /></a>
+              <a href={contactInfo.whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><FaWhatsapp /></a>
+            </div>
+            <div className="footer-built-with-on-right">
+              <span>Built with </span>
+              <FaHeart className="built-with-heart-icon" />
+              <span> using: </span>
+              {footerInfo.builtWith.map((tech) => (
+                <span key={tech} className="tech-logo-item-footer" title={tech}>
+                  {getTechIcon(tech)}
+                </span>
+              ))}
+            </div>
+          </div>
+
         </div>
 
-        {/* Right Column: Socials & Built With */}
-        <div className="footer-right-action-col">
-          <div className="footer-social-icons-group">
-            <a href={`mailto:${contactInfo.email}`} aria-label="Email" title="Email"><FaEnvelope /></a>
-            <a href={contactInfo.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><FaLinkedin /></a>
-            <a href={contactInfo.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><FaGithub /></a>
-            <a href={contactInfo.whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><FaWhatsapp /></a>
-          </div>
-          <div className="footer-built-with-on-right">
-            <span>Built with </span>
-            <FaHeart className="built-with-heart-icon" />
-            <span> using: </span>
-            {footerInfo.builtWith.map((tech) => (
-              <span key={tech} className="tech-logo-item-footer" title={tech}>
-                {getTechIcon(tech)}
-              </span>
-            ))}
-          </div>
-        </div>
+        {isVisible && (
+          <button onClick={scrollToTop} className="back-to-top-built-right" title="Back to Top"> {/* New class */}
+            <FaArrowUp />
+          </button>
+        )}
+      </footer>
+    </AnimatedSection>
 
-      </div>
-
-      {isVisible && (
-        <button onClick={scrollToTop} className="back-to-top-built-right" title="Back to Top"> {/* New class */}
-          <FaArrowUp />
-        </button>
-      )}
-    </footer>
   );
 };
 

@@ -71,67 +71,78 @@ export const sectionSummaries = {
 };
 
 export const technicalSkills = [
+  // Core Programming
   {
-    category: "Programming Languages", // Explicit category for languages
+    category: "Programming Languages",
     skills: [
-      { name: "JavaScript (ES6+)", icon: <DiJsBadge /> },
+      { name: "JavaScript", icon: <DiJsBadge /> },
       { name: "TypeScript", icon: <SiTypescript /> }
     ]
   },
+
+  // Frontend Frameworks
   {
     category: "Frontend Frameworks & Libraries",
     skills: [
-      { name: "React.js (Hooks, Context)", icon: <DiReact /> },
-      { name: "Next.js (SSR, SSG, ISR)", icon: <SiNextdotjs /> },
+      { name: "React", icon: <DiReact /> },
+      { name: "Next.js", icon: <SiNextdotjs /> },
       { name: "Angular", icon: <DiAngularSimple /> },
-      { name: "Redux (Redux Toolkit)", icon: <SiRedux /> },
-      { name: "Zustand" },
-      { name: "React Router" },
-      { name: "Material-UI (MUI)" },
-      { name: "Ant Design" },
+      { name: "Bootstrap", icon: <SiBootstrap /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss /> }
     ]
   },
+
+  // Backend
   {
-    category: "Backend (Familiarity)", // As per your resume
+    category: "Backend & Databases",
     skills: [
       { name: "Node.js", icon: <DiNodejsSmall /> },
       { name: "Express.js", icon: <SiExpress /> },
-      { name: "Nest.js", icon: <SiNestjs /> }
+      { name: "Nest.js", icon: <SiNestjs /> },
+      { name: "MongoDB", icon: <DiMongodb /> },
+      { name: "Firebase", icon: <DiFirebase /> }
     ]
   },
+
+  // State Management
   {
-    category: "UI, Styling & Animation",
+    category: "State Management",
+    skills: [
+      { name: "Redux Toolkit", icon: <SiRedux /> },
+      { name: "Zustand" },
+      { name: "React Context + useReducer" }
+    ]
+  },
+
+  // APIs & Networking
+  {
+    category: "APIs & Networking",
+    skills: [
+      { name: "RESTful APIs" },
+      { name: "Axios" },
+      { name: "GraphQL", icon: <SiGraphql /> },
+      { name: "Apollo Client", icon: <SiApollographql /> },
+      { name: "Socket.io", icon: <SiSocketdotio /> }
+    ]
+  },
+
+  // UI & Styling
+  {
+    category: "UI & Styling",
     skills: [
       { name: "HTML5", icon: <DiHtml5 /> },
       { name: "CSS3 (Flexbox, Grid)", icon: <DiCss3 /> },
       { name: "SASS/SCSS", icon: <DiSass /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-      { name: "Bootstrap", icon: <SiBootstrap /> },
       { name: "Styled Components" },
       { name: "Framer Motion" },
-      { name: "Responsive Web Design" },
-      { name: "Cross-Browser Compatibility" }
+      { name: "Angular Material" },
+      { name: "Material-UI (MUI)" }
     ]
   },
-  // {
-  //   category: "State Management (Advanced)", // Can be separate or merged
-  //   skills: [
-  //     { name: "Redux Saga / Thunk" }, // If you've used middleware
-  //     { name: "React Query / SWR" }, // For server state
-  //   ]
-  // },
+
+  // Authentication
   {
-    category: "APIs & Data Fetching",
-    skills: [
-      { name: "RESTful APIs" },
-      { name: "GraphQL", icon: <SiGraphql /> },
-      { name: "Apollo Client", icon: <SiApollographql /> },
-      { name: "Axios / Fetch API" },
-      { name: "WebSockets", icon: <SiSocketdotio /> },
-    ]
-  },
-  {
-    category: "Authentication & Authorization",
+    category: "Authentication",
     skills: [
       { name: "OAuth 2.0" },
       { name: "JWT (JSON Web Tokens)" },
@@ -139,37 +150,35 @@ export const technicalSkills = [
       { name: "NextAuth.js" }
     ]
   },
+
+  // SEO
   {
-    category: "Build Tools & Bundlers",
+    category: "SEO",
+    skills: [
+      { name: "Open Graph / Twitter Cards" },
+      { name: "Structured Data (JSON-LD)" },
+      { name: "sitemap.xml / robots.txt" }
+    ]
+  },
+
+  // Dev Tools
+  {
+    category: "Dev Tools & Workflow",
     skills: [
       { name: "Webpack", icon: <SiWebpack /> },
       { name: "Babel", icon: <SiBabel /> },
       { name: "Vite", icon: <SiVite /> },
       { name: "npm / yarn", icon: <DiNpm /> },
-      { name: "pnpm" }
-    ]
-  },
-  // {
-  //   category: "Testing & Quality Assurance",
-  //   skills: [
-  //     { name: "Jest", icon: <SiJest /> },
-  //     { name: "React Testing Library", icon: <SiTestinglibrary /> },
-  //     { name: "Cypress / Playwright" },
-  //     { name: "Unit Testing" },
-  //     { name: "Integration Testing" }
-  //   ]
-  // },
-  {
-    category: "Development Tools & Platforms",
-    skills: [
       { name: "Git & GitHub/GitLab/Bitbucket", icon: <DiGit /> },
       { name: "VS Code" },
       { name: "Browser Developer Tools" },
-      { name: "Jira / Asana / Trello" },
-      { name: "Storybook", icon: <SiStorybook /> },
-      { name: "ESLint / Prettier", icon: <SiEslint /> },
+      { name: "ESLint", icon: <SiEslint /> },
+      { name: "Prettier" },
+      { name: "Jira / Zoho" }
     ]
   },
+
+  // Web Performance
   {
     category: "Web Performance & Optimization",
     skills: [
@@ -180,28 +189,27 @@ export const technicalSkills = [
       { name: "Performance Monitoring" }
     ]
   },
-  {
-    category: "Databases (Familiarity)", // As per your resume
-    skills: [
-      { name: "MongoDB", icon: <DiMongodb /> },
-      { name: "Firebase (Firestore/Realtime DB)", icon: <DiFirebase /> }
-    ]
-  },
+
+  // Other Key Concepts
   {
     category: "Other Key Skills & Concepts",
     skills: [
       { name: "Agile Methodologies (Scrum)" },
-      { name: "Problem-Solving" },
+      // { name: "Problem-Solving" },
       { name: "Debugging Techniques" },
-      { name: "Time Management" },
+      // { name: "Time Management" },
       { name: "API Integration" },
       { name: "CRUD Operations" },
       { name: "Real-time Data Handling" },
-      { name: "Progressive Web Apps (PWA)", icon: <SiPwa /> },
-      { name: "Web Accessibility (WCAG)" }
+      // { name: "Progressive Web Apps (PWA)", icon: <SiPwa /> },
+      // { name: "Web Accessibility (WCAG)" }
     ]
-  }
+  },
+
+
 ];
+
+
 
 export const experiences = [
   {

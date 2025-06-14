@@ -24,7 +24,7 @@ const Skills = () => {
     <AnimatedSection className="section skills-section-masonry"> {/* Updated class name */}
       <div className="container">
         <div className="section-header-skills"> {/* Optional: for centering title */}
-          <h2>Technical Skills</h2>
+          <h2>Technical Proficiencies</h2>
           {sectionSummaries.technicalSkills && (
             <p className="section-summary skills-summary">{sectionSummaries.technicalSkills}</p>
           )}
