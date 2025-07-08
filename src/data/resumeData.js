@@ -217,8 +217,9 @@ export const experiences = [
     role: "Software Engineer",
     dates: "Jul 2023 - Present",
     responsibilities: [
-      "Spearheaded the company's first React and Next.js projects, improving initial page load times by an average of 20% and enhancing developer productivity.",
-      "Engineered and maintained scalable web applications using React, Next.js, and Angular, incorporating SSR for improved SEO scores by up to 30%.",
+      "Initiated React and Next.js projects, improving initial page load times by an average of 60% and enhancing developer productivity.",
+      "Developed and deployed scalable full-stack web applications utilizing the MERN stack (MongoDB, Express.js,React.js, Node.js), ensuring high performance and reliability",
+      "Maintained scalable web applications, incorporating SSR for improved SEO scores by up to 30%.",
       "Contributed significantly to a major Angular-based enterprise product and provided technical assistance and mentorship for six other Angular projects, fostering team skill development.",
       "Led the strategic transition from Angular to React for key modules, resulting in full adoption of React-based projects, a 15% reduction in codebase complexity, and successful team expansion."
     ],
@@ -229,7 +230,7 @@ export const experiences = [
     role: "MEARN Internship",
     dates: "Dec 2022 - Aug 2023",
     responsibilities: [
-      "Developed and delivered 3 full-stack web applications using HTML, CSS, React, Angular, Node.js, and MongoDB as part of an intensive training program.",
+      "Developed and delivered three full-stack web applications using HTML, CSS, React, Angular, Node.js, and MongoDB as part of an intensive training program.",
       "Gained hands-on experience architecting RESTful APIs with Node.js & Express.js and designing schemas for MongoDB.",
       "Actively participated in daily scrums and sprint planning, adhering to Agile development processes and ensuring timely project milestones."
     ]
